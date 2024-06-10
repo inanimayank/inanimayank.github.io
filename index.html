@@ -1,201 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resume</title>
-  <script src="https://unpkg.com/feather-icons"></script>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Standup Updates</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 2rem;
+        }
+        .filter {
+            margin-bottom: 2rem;
+        }
+        .updates {
+            width: 100%;
+            max-width: 800px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 1rem;
+        }
+        .update {
+            padding: 1rem;
+            border-bottom: 1px solid #ccc;
+        }
+        .update:last-child {
+            border-bottom: none;
+        }
+    </style>
 </head>
-
 <body>
-  <div class="container">
-    <div class="profile">
-      <div class="profile_container">
-        <div class="profile_profileImg">
-          <img src="profileImage.jpg" alt="Mayank Inani">
+    <header>
+        <h1>Standup Updates</h1>
+    </header>
+    <div class="container">
+        <div class="filter">
+            <label for="monthFilter">Filter by month: </label>
+            <select id="monthFilter" onchange="filterUpdates()">
+                <option value="all">All</option>
+                <option value="january">January</option>
+                <option value="february">February</option>
+                <option value="march">March</option>
+                <!-- Add more months as needed -->
+            </select>
         </div>
-        <div>
-          <h1 class="profile_name">
-            <span class="profile_name_firstName">Mayank</span>
-            <span class="profile_name_lastName">Inani</span>
-          </h1>
-          <p class="profile_title">Software Developer</p>
-          <p class="description profile_description">
-            <ul class="Experience_list description">
-            Ambitious and goal-oriented undergraduate with a passion for software development.
-            Experienced in freelance projects and internships, with strong problem solving skills.
-            Competitive programmer with a deep understanding of algorithms and data structures.
-            Expertise in C-Sharp and .NET development, with experience in Python and Django.
-            Deep knowledge and implementation experience of GitHub, GitHub Actions, workflows, and automation.
-            </ul>
-          </p>
-          <a class="downloadBtn" href="./cv.pdf" download="Resume.pdf">Download Resume</a>
+        <div class="updates" id="updates">
+            <div class="update" data-month="january">
+                <h2>Update for January 1</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+            </div>
+            <div class="update" data-month="january">
+                <h2>Update for January 2</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+            </div>
+            <div class="update" data-month="january">
+                <h2>Update for January 3</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+            </div>
+            <div class="update" data-month="february">
+                <h2>Update for February 1</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+            </div>
+            <div class="update" data-month="march">
+                <h2>Update for March 1</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+            </div>
+            <!-- Add more updates as needed -->
         </div>
-      </div>
     </div>
-    <div class="group-1">
-      <div class="skills">
-        <h3 class="title">Expertise</h3>
-        <ul class="skills_list description">
-          <li>C++</li>
-          <li>Python and Django</li>
-          <li>HTML CSS</li>
-          <li>Java</li>
-          <li>CI/CD Tools</li>
-          <li>Java</li>
-          <li>Kubernetes</li>
-          <li>Docker</li>
-          <li>Machine Learning</li>
-        </ul>
-      </div>
+    <script>
+        function filterUpdates() {
+            const filterValue = document.getElementById('monthFilter').value;
+            const updates = document.getElementsByClassName('update');
 
-      <div class="edu">
-        <h3 class="title">Education</h3>
-        <div class="edu_item">
-          <p class="item_preTitle">2019-2023</p>
-          <h4 class="item_title">BE in Computer Science and Engineering</h4>
-          <p class="item_subtitle">
-            Chandigarh University, Mohali, Punjab <br>
-            CGPA: 8.20
-          </p>
-        </div>
-        <div class="edu_item">
-          <p class="item_preTitle">2018-2019</p>
-          <h4 class="item_title">Intermediate</h4>
-          <p class="item_subtitle">
-            Alok School,Rajsamand,Rajasthan
-            <br>
-            CBSE - 91.40%
-          </p>
-        </div>
-      </div>
-
-      <div class="certification">
-        <h3 class="title">Certification</h3>
-        <div class="certification_item">
-          <p class="item_preTitle">2018</p>
-          <h4 class="item_title">Frontend Developer</h4>
-          <p class="description">
-            <ul class="Experience_list description">
-            <li>Certified in Using Python (Coursera) (02/2020 - 05/2020)</li>
-            <li>Certified in Foundations of cryptography (NPTEL) (02/2022 - 07/2022)</li>
-            <li>Certified in Excel Skills for Business : Advanced (Coursera) (01/2022 - 03/2022) </li>
-          </ul>
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="group-2">
-      <div class="exp">
-        <h3 class="title">Experience</h3>
-        <div class="exp_item">
-          <p class="item_preTitle">Sep, 2021 - Jan,2022</p>
-          <h4 class="item_title">Samsung Prism.</h4>
-          <p class="item_subtitle">Research Intern</p>
-          <p class=" description">
-            <ul class="Experience_list description">
-            <li>Gained experience with Machine Learning and Neural Networks.</li>
-            <li>Researched and implemented RCNN and LSTM models for image segmentation solutions.</li>
-            <li>Worked on camera solutions for sky effects in real time photography</li>
-            </ul>
-          </p>
-        </div>
-        <div class="exp_item">
-          <p class="item_preTitle">Jan, 2023 - June,2023</p>
-          <h4 class="item_title">Philips India</h4>
-          <p class="item_subtitle">Intern</p>
-          <p class="description">
-            <ul class="Experience_list description">
-            <li>Worked as a Software Developer and gained experience in C# and .NET product Development.</li>
-            <li>Enhanced ability to automate CI/CD pipelines using Github Actions.</li>
-            <li>Learned and deployed applications using ArgoCD, Helm charts, Docker and Kubernetes.</li>
-            <li>Developed excellent problem solving and Debugging skills.</li>
-            <li>Experienced working using agile methods and scrum teams.</li>
-            <li>Seeking a challenging position where I can use my skills and experience to make a significant
-            contribution to a team.</li>
-            <li>Technologies: C#, .NET, Docker, Kubernetes, Github, Azure, Redis, Kafka, Postgres,
-            Prometheous.</li>
-          </ul>
-          </p>
-        </div>
-      </div>
-      <div class="awards">
-        <h3 class="title">Projects</h3>
-        <div class="awards_item">
-          <p class="item_preTitle">2021</p>
-          <h4 class="item_title">ShopGuru Shopping Website</h4>
-          <p class=" description">
-            <ul class="Experience_list description">
-            <li>A charitable shopping website that provides users to buy and donate clothes on a single platform.</li>
-            <li>Django framework used for backend Development.</li>
-            <li>HTML,CSS,JavaScript used for frontend.</li>
-            <li><a href="https://github.com/inanimayank/ShopGuru" class="Experience_list description">https://github.com/inanimayank/ShopGuru</a></li>
-          </ul>
-          </p>
-        </div>
-      </div>
-
-      <div class="interest">
-        <h3 class="title">Interest</h3>
-        <div class="interest_items">
-          <div class="interest_item">
-            <i data-feather="music"></i>
-            <span>Music</span>
-          </div>
-          <div class="interest_item">
-            <i data-feather="book"></i>
-            <span>Books</span>
-          </div>
-          <div class="interest_item">
-            <i data-feather="map"></i>
-            <span>Travel</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-    <hr>
-    <div class="group-3">
-      <div class="contact">
-        <h3 class="title">Contact</h3>
-        <div class="contact_info">
-          <p class="description">
-            Sajjan Nagar,Station Road,Rajsamand
-            Rajasthan, 313324
-          </p>
-          <p class="description">
-            +91 7737261011
-          </p>
-          <p class="description">
-            inanimayank7737@gmail.com
-          </p>
-        </div>
-      </div>
-      <div class="social">
-        <h3 class="title">Socials</h3>
-        <div class="social_items">
-          <a href="https://github.com/inanimayank" target="_b" class="social_item">
-            <i data-feather="github"></i>
-            <span>/inanimayank</span>
-          </a>
-          <a href="#" target="_blank" class="social_item">
-            <i data-feather="twitter"></i>
-            <span>/inanimayankk</span>
-          </a>
-          <a href="https://www.linkedin.com/in/inanimayank/" target="_blank" class="social_item">
-            <i data-feather="linkedin"></i>
-            <span>/inanimayank</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <script>
-    feather.replace()
-  </script>
+            for (let i = 0; i < updates.length; i++) {
+                if (filterValue === 'all' || updates[i].getAttribute('data-month') === filterValue) {
+                    updates[i].style.display = 'block';
+                } else {
+                    updates[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
 </body>
-
 </html>
