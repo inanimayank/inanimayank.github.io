@@ -59,56 +59,79 @@
         <div class="updates" id="updates">
             <div class="update" data-month="June">
                 <h2>Update for June 3</h2>
-                <p>	• Pavan :
-		○ Jenkins upgrade done successfully.
-		○ On-call, troubleshooted on 2 alerts
-		○ Call with the testing team.
-		○ Working on 2 alerts today.
-
-	• Mayank :
-		○ NA Deployment for 1.52.1
-		○ APAC deployment for 1.52.1
-		○ Deployed the services for DM team on QAS3, got it smoke tested by Mike
-		○ Follow up with a developer for Github access.
-		○ Had the bastion connectivity overview from Allan.
-	• Sudarsana : 
-		○ On call shadowing with Pavan - worked on Autoheal issue.
-		○ Looked at a long open transaction
-		○ Dry run on QAS3
-		○ EU deployment for 1.52.1 
-		○ XLR issue fixed (deployments were not passing in CTI)
-
-	• Vijeesh : 
-		○ TeamCity API Integration with Github: Verification Done
-		○ CROMS API - fetch non Merged release branches migration implementation- in Progress
-		○ Attended tech talk - GitHub Wow and Pipeline Overview – Naveen and Nick.
-		
-	• Falguni : 
-		○ Modems not communicating issue.
-		○ Rapsody QA7 - looking on it today
-		○ Couple of SSL certificates requested -  will update on the boxes.
-		○ Sync up with Murali and Mayank.
-		
-	• Murali : 
-		○ 1. Checked with Joop on the snapshot restoration. Did not get any response back from him. We need to have a setup done seperately for the VSDBCMD step as a alternate approach.
-		○ 2. Continue to work with the migration team, on the test-automation setup. 
-		○ 3. Need to follow up with falguni to get inputs to respond back to the IT/Network incident ticket. 
-		○ 4. Will be working on the QMS documentation of 3.0 SCMP.
-	
-	• Supriya : 
-		○ Worked on Jira dashboard , Report and CM tickets analysis
-		○ Connected with Sumant for PCM.Monitoring.V2.Repository.ServiceHost/Service.svc service is missing in NAQA3 web0
-		○ Wokred with DM team for CM-20176  for QANA3
-		○ worked on SFTP DSN file processing
-		○ worked on access related CM tickets
-		○ Attended  SRC DevOps Tech-talk (GitHub Wow and Pipeline Overview)
-		○ Discussed DR Jira Dasborad access with Allan
-	
-	• Saptarshi :
-		○ Park DB upgrade for APAC and EU region
-		○ Gathering more information regerding certificate authority expiration for 1057 RDS instance
-		○ Couple of access tickets
-</p>
+                 <ul>
+                    <li>Mayank:
+                        <ul>
+                            <li>DM deployment automation - steps on Octopus</li>
+                            <li>Teamcity API integration - synced up with Vijeesh</li>
+                            <li>Checking with Naveen and Nick for further actions</li>
+                        </ul>
+                    </li>
+                    <li>Murali:
+                        <ul>
+                            <li>Worked on the ADS tasks for applying the merge restriction on the DMCO_Stable branch</li>
+                            <li>Obtained the list of users from the Azure TFS build node and shared in the ticket. Review need to be done on removal of access for users that should not have access.</li>
+                            <li>Will be working with the TFS infra team on restoring snapshot that was taken before the vulnerabilities clean up (doing upon request from Rohit)</li>
+                            <li>Will be discussing about the response shared by IT/Network incident team from zscaler with Falguni and follow up on response for the stakeholders meeting to arrive at closure on the request.</li>
+                            <li>Continuing to work with the Github Migration team on resolving the build issues the team is facing while carrying out the migration.</li>
+                        </ul>
+                    </li>
+                    <li>Vijeesh:
+                        <ul>
+                            <li>TeamCity API Integration with Github: Implementation almost done, will try to raise the PR today</li>
+                            <li>RabbitMQ certificate issue discussion with Bangalore team</li>
+                            <li>RabbitMQ certificate troubleshooting session with NA team</li>
+                            <li>Paired up with Falguni on DB issue in China region</li>
+                            <li>Paired up with Falguni for RabbitMQ signal lost issue</li>
+                        </ul>
+                    </li>
+                    <li>Pavan:
+                        <ul>
+                            <li>Sync-ups with teams for RMQ cert issue</li>
+                            <li>Resolved the cartel access issue</li>
+                            <li>On-call incidents</li>
+                            <li>Jenkins upgrade - planned for 04-Jun</li>
+                        </ul>
+                    </li>
+                    <li>Sudarsana:
+                        <ul>
+                            <li>RMQ cert issue sync-ups</li>
+                            <li>Verification team - code analysis issues - reports not available</li>
+                            <li>CO branching strategy - build-needs - new definitions</li>
+                            <li>1.52 deployment planned for this week</li>
+                            <li>CTI build failures - XLR issues</li>
+                        </ul>
+                    </li>
+                    <li>Saptarshi:
+                        <ul>
+                            <li>Monthly reports for Neo4j</li>
+                        </ul>
+                    </li>
+                    <li>Supriya:
+                        <ul>
+                            <li>Worked on 6 MFA requests</li>
+                            <li>Connected with Falguni on my Ansible setup for MFA</li>
+                            <li>Connected with Sumanth on QANA3 deployment on SVC0 and WEB0</li>
+                            <li>Had discussion over China alert with Falguni and BRR team</li>
+                            <li>Worked on software's version details requested by DM team</li>
+                            <li>Had a session with Zack and Falguni on China alert troubleshooting</li>
+                            <li>SFTP DSN file processing for all 4 regions</li>
+                            <li>Worked on CM ticket</li>
+                            <li>Connected with DM team for identifying prod config value for captcha: CM-20160</li>
+                        </ul>
+                    </li>
+                    <li>Falguni:
+                        <ul>
+                            <li>China MDP issue troubleshooting (Zack+Supriya)</li>
+                            <li>SSL cert upgrades - WIP</li>
+                            <li>Working sessions with new members on PD incidents</li>
+                            <li>Ansible access issue correction for Supriya</li>
+                            <li>RMQ cert issue sync-ups</li>
+                            <li>DM deploy-automation sync up with Mayank</li>
+                            <li>Rhapsody cert renewal issue for QA7 - WIP</li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
             <div class="update" data-month="June">
                 <h2>Update for June 4</h2>
