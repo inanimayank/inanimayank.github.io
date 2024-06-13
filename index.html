@@ -553,6 +553,163 @@
     </li>
 </ul>
 </div>
+            <div class="update" data-month="June">
+            <h2>Standup-Update June 12</h2>
+           <ul>
+    <li>Sudarsana:
+        <ul>
+            <li>KES RePubs execution and verification completed on STS1.</li>
+            <li>Branching strategy discussion - Sourav.</li>
+            <li>Sync service deployment support - Divyanshu.</li>
+            <li>CORMS DB upgrade support - Saptarshi.</li>
+            <li>TODO: Demo upgrade to latest version 1.52.1.</li>
+        </ul>
+    </li>
+    <li>Murali:
+        <ul>
+            <li>Was in touch with Saran Raj to procure a Mac Book for the POC activities of DM Github Migration (Arpitha has arranged this for the migration team on a temporary basis).</li>
+            <li>Fixed the issue on the Fortify scans; this was happening due to the mismatched nuget versions in the restore task.</li>
+            <li>Soumita came with a build issue on a few services that were breaking due to some missing Assembly files on the workspace, investigating the same currently.</li>
+            <li>Completed working on the review comments on the branching strategy diagram, submitted the same for approval from Deepthi and Rohit to conclude the same.</li>
+            <li>As Nick was not available yesterday, I will follow up on setting up a call regarding the TFS build Machine issues based on his availability.</li>
+        </ul>
+    </li>
+    <li>Saptarshi:
+        <ul>
+            <li>On call this week.</li>
+            <li>Worked with Vijesh regarding the PD alerts.</li>
+            <li>Cleaned up older BRv2 RDS instances under STS1 space.</li>
+            <li>Updated CA for CROMS Prod RDS instance.</li>
+            <li>Working on a request from fix team CM-20244.</li>
+            <li>Working on upcoming HSP CA update planning.</li>
+        </ul>
+    </li>
+    <li>Vijeesh:
+        <ul>
+            <li>OnCall: Paired UP with Saptarshi to resolve below issues:
+                <ul>
+                    <li>Disk Used % > 90.0 for at least 2 minutes on 'PHHDMEUSQL1002 (W:)'</li>
+                    <li>Long Open Transaction (2 hrs)</li>
+                    <li>Raqueue: /sync.com.philips.sapphire.patient.upsert: clustername=rabbit@phheaeurmq query result is < 1.0 for 5 minutes on 'Sev 2.'</li>
+                </ul>
+            </li>
+            <li>CORMS API Migration - fetch non Merged release branches API migration - enhancement:
+                <ul>
+                    <li>Had a discussion with Sudarsan and Mayank.</li>
+                    <li>Implementation is in progress.</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>Pavan:
+        <ul>
+            <li>Closed all stories for current sprint other than Nginx wildcard certificate automation.</li>
+            <li>Working on Nginx, Inventory setup done. We are able to authenticate from linuxtools box (need to set up ssh config file to authenticate).</li>
+            <li>Nginx Ansible playbooks - WIP.</li>
+            <li>Neo4j rebuild Jprod in pause till further discussions (service not able to enable in init.d).</li>
+        </ul>
+    </li>
+    <li>Supriya:
+        <ul>
+            <li>Worked on testing team request for test user creation to check Delete Account Scenarios CM-20229.</li>
+            <li>Worked on QA space access request CM-20190.</li>
+            <li>Worked on Onboarding Operations DBA - Pranay Kumar Namilakonda, AWS 1057 Bastion and AWS QA Bastion, AWS console and PMP console. CF id is created and CF space access is granted for EU, APAC, and NA.</li>
+            <li>Followed up with HSDP team for China access for Pranay.</li>
+            <li>Worked on Brett Stackhouse Onboarding: Jira and confluence dashboard, PMP, AWS console, raised ticket to HSDP for Slack access.</li>
+            <li>SFTP DSN file processing.</li>
+            <li>Had a discussion for QANA6 space (SVC and web boxes usage) for deployment automation.</li>
+            <li>Worked on QANA6 deployment request CM-20238.</li>
+        </ul>
+    </li>
+    <li>Mayank:
+        <ul>
+            <li>Was having some issues with connecting to EC2, took Pavan's help in setting up the config, now it is working fine.</li>
+            <li>Working on DM deployment Automation. Starting the deployment on svc0 and web0 boxes today.</li>
+        </ul>
+    </li>
+    <li>Falguni:
+        <ul>
+            <li>Troubleshooting DM Load Balancer issue - no communication over port 444 (observed across all QA envs).</li>
+            <li>Pending (old) CM tickets to closure.</li>
+            <li>Simmodems2 troubleshoot on F5.</li>
+            <li>China MDP1: RCA for Data Processor service offline.</li>
+            <li>Meets: SSL certs (working session with Dan), standups.</li>
+        </ul>
+    </li>
+</ul>
+</div>
+              <div class="update" data-month="June">
+            <h2>Standup-Update June 13</h2>
+            <ul>
+    <li>Saptarshi:
+        <ul>
+            <li>On call this week.</li>
+            <li>Worked with Vijesh regarding the PD alerts.</li>
+            <li>Updated the EADM password in NAQA3.</li>
+            <li>Discussed with Allan & Chris regarding the EU S3 bucket's high cost.</li>
+        </ul>
+    </li>
+    <li>Supriya:
+        <ul>
+            <li>Worked on Onboarding Operations DBA - Pranay Kumar Namilakonda (China bastion completed, initiated cartel access).</li>
+            <li>Worked on Brett Stackhouse Onboarding (newrelic, Care Orchestrator Product Support accounts, AWS 1057bastion access).</li>
+            <li>Worked on DM team request for NAQA6 CM-20237, CM-20238.</li>
+            <li>Worked on DM team for Integrator service "As per the SQL logs I checked, there is an 'Application initiated shutdown: SyncServer shutting down due to an unexpected shutdown, Dev team will look into that.'</li>
+            <li>Had sync-up with Brett and Chris regarding onboarding.</li>
+            <li>Updated Azure DevOps board.</li>
+        </ul>
+    </li>
+    <li>Mayank:
+        <ul>
+            <li>Working on DM deployment automation - WIP.</li>
+            <li>Worked with Sudarsana on including r1_53 branches for NTI trigger.</li>
+            <li>Will help the team on the demo environment releases.</li>
+            <li>Attended Solutions System Demo - PI 2024.2.</li>
+        </ul>
+    </li>
+    <li>Vijeesh:
+        <ul>
+            <li>OnCall: Worked with Saptarshi on PD Alerts.</li>
+            <li>CORMS API Migration - fetch non Merged release branches API migration - enhancement:
+                <ul>
+                    <li>Implementation - Done.</li>
+                    <li>Dev Verification going on.</li>
+                </ul>
+            </li>
+            <li>Attended Solutions System Demo - PI 2024.2.</li>
+        </ul>
+    </li>
+    <li>Falguni:
+        <ul>
+            <li>DM deploy automation troubleshooting - issues of Robocopy over network.</li>
+            <li>DM LB issue troubleshooting (WIP).</li>
+            <li>Meets: team standups, System demo.</li>
+        </ul>
+    </li>
+    <li>Murali:
+        <ul>
+            <li>I tried configuring the MacBook that was given for POC purpose, but the machine had some hardware interface issue. We gave it back to the support team.</li>
+            <li>Working on the build issues of TFS pipelines, will be sharing the findings back with the team for changes.</li>
+            <li>Will be revisiting the MDF APIs from a CICD context, to reduce the usage of Android mobile devices for build and test purposes.</li>
+        </ul>
+    </li>
+    <li>Sudarsana:
+        <ul>
+            <li>Demo env upgraded to 1.49.2.</li>
+            <li>Updated XLR workflow to route 1.53 branch changes to NTI.</li>
+            <li>Sync service demo support.</li>
+            <li>Attended demo and TEDS Trainings completed.</li>
+        </ul>
+    </li>
+    <li>Pavan:
+        <ul>
+            <li>Completed wildcard certificate automation for nginx and uploaded docs to gitlab repo.</li>
+            <li>Call with Falguni about Neo4j rebuilding in jprod.</li>
+            <li>Attended Solutions System Demo - PI 2024.2.</li>
+        </ul>
+    </li>
+</ul>
+</div>
             <!-- Add more updates as needed -->
         </div>
     </div>
