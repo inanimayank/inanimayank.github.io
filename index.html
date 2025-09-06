@@ -1,1644 +1,212 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Standup Updates</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-        }
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 2rem;
-        }
-        .filter {
-            margin-bottom: 2rem;
-        }
-        .updates {
-            width: 100%;
-            max-width: 800px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 1rem;
-        }
-        .update {
-            padding: 1rem;
-            border-bottom: 1px solid #ccc;
-        }
-        .update:last-child {
-            border-bottom: none;
-        }
-    </style>
+    <title>Mayank Inani - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <header>
-        <h1>Ops team Standup Updates</h1>
-    </header>
-    <div class="container">
-        <div class="filter">
-            <label for="monthFilter">Filter by month: </label>
-            <select id="monthFilter" onchange="filterUpdates()">
-                <option value="all">All</option>
-                <option value="June">June</option>
-                <option value="July">July</option>
-                <option value="August">August</option>
-                <!-- Add more months as needed -->
-            </select>
-        </div>
-        <div class="updates" id="updates">
-            <div class="update" data-month="June">
-                <h2>Standup-Update June 3</h2>
-                 <ul>
-                    <li>Mayank:
-                        <ul>
-                            <li>DM deployment automation - steps on Octopus</li>
-                            <li>Teamcity API integration - synced up with Vijeesh</li>
-                            <li>Checking with Naveen and Nick for further actions</li>
-                        </ul>
-                    </li>
-                    <li>Murali:
-                        <ul>
-                            <li>Worked on the ADS tasks for applying the merge restriction on the DMCO_Stable branch</li>
-                            <li>Obtained the list of users from the Azure TFS build node and shared in the ticket. Review need to be done on removal of access for users that should not have access.</li>
-                            <li>Will be working with the TFS infra team on restoring snapshot that was taken before the vulnerabilities clean up (doing upon request from Rohit)</li>
-                            <li>Will be discussing about the response shared by IT/Network incident team from zscaler with Falguni and follow up on response for the stakeholders meeting to arrive at closure on the request.</li>
-                            <li>Continuing to work with the Github Migration team on resolving the build issues the team is facing while carrying out the migration.</li>
-                        </ul>
-                    </li>
-                    <li>Vijeesh:
-                        <ul>
-                            <li>TeamCity API Integration with Github: Implementation almost done, will try to raise the PR today</li>
-                            <li>RabbitMQ certificate issue discussion with Bangalore team</li>
-                            <li>RabbitMQ certificate troubleshooting session with NA team</li>
-                            <li>Paired up with Falguni on DB issue in China region</li>
-                            <li>Paired up with Falguni for RabbitMQ signal lost issue</li>
-                        </ul>
-                    </li>
-                    <li>Pavan:
-                        <ul>
-                            <li>Sync-ups with teams for RMQ cert issue</li>
-                            <li>Resolved the cartel access issue</li>
-                            <li>On-call incidents</li>
-                            <li>Jenkins upgrade - planned for 04-Jun</li>
-                        </ul>
-                    </li>
-                    <li>Sudarsana:
-                        <ul>
-                            <li>RMQ cert issue sync-ups</li>
-                            <li>Verification team - code analysis issues - reports not available</li>
-                            <li>CO branching strategy - build-needs - new definitions</li>
-                            <li>1.52 deployment planned for this week</li>
-                            <li>CTI build failures - XLR issues</li>
-                        </ul>
-                    </li>
-                    <li>Saptarshi:
-                        <ul>
-                            <li>Monthly reports for Neo4j</li>
-                        </ul>
-                    </li>
-                    <li>Supriya:
-                        <ul>
-                            <li>Worked on 6 MFA requests</li>
-                            <li>Connected with Falguni on my Ansible setup for MFA</li>
-                            <li>Connected with Sumanth on QANA3 deployment on SVC0 and WEB0</li>
-                            <li>Had discussion over China alert with Falguni and BRR team</li>
-                            <li>Worked on software's version details requested by DM team</li>
-                            <li>Had a session with Zack and Falguni on China alert troubleshooting</li>
-                            <li>SFTP DSN file processing for all 4 regions</li>
-                            <li>Worked on CM ticket</li>
-                            <li>Connected with DM team for identifying prod config value for captcha: CM-20160</li>
-                        </ul>
-                    </li>
-                    <li>Falguni:
-                        <ul>
-                            <li>China MDP issue troubleshooting (Zack+Supriya)</li>
-                            <li>SSL cert upgrades - WIP</li>
-                            <li>Working sessions with new members on PD incidents</li>
-                            <li>Ansible access issue correction for Supriya</li>
-                            <li>RMQ cert issue sync-ups</li>
-                            <li>DM deploy-automation sync up with Mayank</li>
-                            <li>Rhapsody cert renewal issue for QA7 - WIP</li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <div class="update" data-month="June">
-                <h2>Standup-Update June 4</h2>
-                <ul>
-    <li>Mayank:
-        <ul>
-            <li>Worked on DM deployment Automation</li>
-            <li>Will do 1.52 release on QAS3 and EU prod today</li>
-            <li>Discussed with Nick on the tasks to take up in DevOps board</li>
-        </ul>
-    </li>
-    <li>Murali:
-        <ul>
-            <li>Worked with Prajwal on the GitHub migration activities, iOS builds issues were being resolved</li>
-            <li>Meeting on branching strategy concluded and inputs on hotfix and merge approval were provided during the meeting, same is captured in the SCMP documentation and will be shared for review</li>
-            <li>Falguni inputs are pending for scheduling a call on the request from the Open IT/Network ticket for Jenkins connectivity issue</li>
-        </ul>
-    </li>
-    <li>Vijeesh:
-        <ul>
-            <li>TeamCity API Integration with GitHub: Implementation done, PR raised - Dev Verification will finish today</li>
-            <li>CORMS API - fetch non Merged release branches migration implementation - in Progress</li>
-        </ul>
-    </li>
-    <li>Pavan:
-        <ul>
-            <li>Today we have RAD-IT upgrade at 4:30pm IST</li>
-            <li>Worked on disk space issue on NA PROD</li>
-            <li>Working on alerts (on-call PIC)</li>
-            <li>Working on Wildcard Nginx inventory setup and authentications</li>
-        </ul>
-    </li>
-    <li>Supriya:
-        <ul>
-            <li>Worked on QANA6 request CM-20125, CM-20176</li>
-            <li>Had discussion regarding DEVMini with Sumanth and Falguni</li>
-            <li>Connected with Sumant from DM team for PCM.PubSub.V3.ServiceHost issue</li>
-            <li>Connected with Sudarsana DM team for NAQA3: Internal server error while deleting the PCM user account</li>
-            <li>Worked on Jira Dashboard CM tickets cleanup</li>
-            <li>Attended Customer Connect Sessions with GPM's</li>
-        </ul>
-    </li>
-    <li>Saptarshi:
-        <ul>
-            <li>Sent all the monthly reports</li>
-            <li>Creating task and stories for CA update</li>
-        </ul>
-    </li>
-    <li>Sudarsana:
-        <ul>
-            <li>Paired on Prescription issue in STS1 with Scott and Chris</li>
-            <li>PSC login issue on bang - Aditya</li>
-            <li>NR API to retrieve org Ids - Keith</li>
-            <li>TODO: QAS3 dry run and EU Deployment</li>
-        </ul>
-    </li>
-    <li>Falguni:
-        <ul>
-            <li>Troubleshooting DM devmini space</li>
-            <li>DM deploy-automation - sync up</li>
-            <li>SSL Cert Upgrades - WIP</li>
-        </ul>
-    </li>
-</ul>
-</div>
-            <div class="update" data-month="June">
-                <h2>Standup-Update June 5</h2>
-                <p><ul>
-    <li>Pavan:
-        <ul>
-            <li>Jenkins upgrade done successfully</li>
-            <li>On-call, troubleshooted on 2 alerts</li>
-            <li>Call with the testing team</li>
-            <li>Working on 2 alerts today</li>
-        </ul>
-    </li>
-    <li>Mayank:
-        <ul>
-            <li>Dry run on QAS3</li>
-            <li>EU deployment for 1.52.1</li>
-            <li>Jenkins upgrade done</li>
-            <li>Worked on DM deployment automation</li>
-        </ul>
-    </li>
-    <li>Sudarsana:
-        <ul>
-            <li>On call shadowing with Pavan - worked on Autoheal issue</li>
-            <li>Looked at a long open transaction</li>
-            <li>Dry run on QAS3 for 1.52.1</li>
-            <li>EU deployment for 1.52.1</li>
-            <li>XLR issue fixed (deployments were not passing in CTI)</li>
-        </ul>
-    </li>
-    <li>Vijeesh:
-        <ul>
-            <li>TeamCity API Integration with GitHub: Verification Done</li>
-            <li>CROMS API - fetch non Merged release branches migration implementation - in Progress</li>
-            <li>Attended tech talk - GitHub Wow and Pipeline Overview – Naveen and Nick</li>
-        </ul>
-    </li>
-    <li>Falguni:
-        <ul>
-            <li>Modems not communicating issue</li>
-            <li>Rapsody QA7 - looking on it today</li>
-            <li>Couple of SSL certificates requested - will update on the boxes</li>
-            <li>Sync up with Murali and Mayank</li>
-        </ul>
-    </li>
-    <li>Murali:
-        <ul>
-            <li>Checked with Joop on the snapshot restoration. Did not get any response back from him. We need to have a setup done separately for the VSDBCMD step as an alternate approach</li>
-            <li>Continue to work with the migration team, on the test-automation setup</li>
-            <li>Need to follow up with Falguni to get inputs to respond back to the IT/Network incident ticket</li>
-            <li>Will be working on the QMS documentation of 3.0 SCMP</li>
-        </ul>
-    </li>
-    <li>Supriya:
-        <ul>
-            <li>Worked on Jira dashboard, Report and CM tickets analysis</li>
-            <li>Connected with Sumant for PCM.Monitoring.V2.Repository.ServiceHost/Service.svc service is missing in NAQA3 web0</li>
-            <li>Worked with DM team for CM-20176 for QANA3</li>
-            <li>Worked on SFTP DSN file processing</li>
-            <li>Worked on access related CM tickets</li>
-            <li>Attended SRC DevOps Tech-talk (GitHub Wow and Pipeline Overview)</li>
-            <li>Discussed DR Jira Dashboard access with Allan</li>
-        </ul>
-    </li>
-</ul>
-</div>
-            <div class="update" data-month="June">
-                <h2>Standup-Update June 6</h2>
-                <ul>
-    <li>Sudarshan:
-        <ul>
-            <li>On-call, Paired with Pavan</li>
-            <li>1.52.1 NA deployment</li>
-            <li>STS1 issue followup</li>
-            <li>QAS2 toggle issue</li>
-            <li>Worked with Saptarshi for COMRS test instance upgrade</li>
-        </ul>
-    </li>
-    <li>Pavan:
-        <ul>
-            <li>On-call - paired with Sudarshan</li>
-            <li>RMQ certificate issue in QAS1 followup</li>
-            <li>Wildcard automation - Nginx</li>
-            <li>Neo4j - CR reviewed</li>
-            <li>To-do: Playbooks work for - Nginx</li>
-        </ul>
-    </li>
-    <li>Murali:
-        <ul>
-            <li>Responded back to the IT/Network ticket and asked them to close the investigation and also mentioned that we'll reopen the ticket when similar issue reappears</li>
-            <li>Created the package 3.0.0.025 for the DMCO team and shared update on the Jira ticket</li>
-            <li>Worked with GitHub migration team and helped them troubleshoot build issues on the Android pipelines</li>
-            <li>Worked with the DM mobile team and helped create SCA reports for them. One blocker here is for web there is an open issue that I am working on to fix/resolve (wrt, fortify pipeline)</li>
-            <li>Blocker: [CM-20191] Provide access to Lucid charts - Jira (sapphirepri.com) need access to the Lucid charts to be able to modify a diagram relating to the branching strategy</li>
-            <li>Did clean up on the TFS build node as the D Drive was full on storage. Found the issue to be from the TONIC project wherein it accounted for more than 33% of Drops folder</li>
-            <li>Written back to Chandu/Joop from the Philips IT Infra team and asked them to retain the snapshot until the 3.0 release is completed. They have also confirmed on the snapshot retention</li>
-        </ul>
-    </li>
-    <li>Mayank:
-        <ul>
-            <li>NA Deployment for 1.52.1</li>
-            <li>Completed the post deploy activities for EU deploy</li>
-            <li>DM-Deployment automation - 60% complete, deploy services step left</li>
-            <li>Working on the deployment of services on QAS3 for DM team</li>
-        </ul>
-    </li>
-    <li>Vijeesh:
-        <ul>
-            <li>CORMS API - fetch non Merged release branches migration implementation - in Progress</li>
-            <li>Supported NA 1.52.1 Release activity</li>
-        </ul>
-    </li>
-    <li>Supriya:
-        <ul>
-            <li>Connected with Mayank for DM deployment automation</li>
-            <li>Working on documentation for Install PCMSites On IIS</li>
-            <li>Had a discussion with Chris regarding Jira dashboard</li>
-            <li>Had a discussion with DM team for NAQA3 deployment</li>
-            <li>Worked on DR project Jira request</li>
-            <li>Worked on some CM tickets</li>
-        </ul>
-    </li>
-    <li>Falguni:
-        <ul>
-            <li>Follow up with CA Team for SSL Cert issues</li>
-            <li>Reissued the certs for Security Compliance of non-www CO domains</li>
-            <li>Troubleshooting the NAQA7 Rhapsody cert issue</li>
-            <li>Meetings and CO 1.52 Release Support</li>
-        </ul>
-    </li>
-</ul>
-</div>
-            <div class="update" data-month="June">
-                <h2>Standup-Update June 7</h2>
-                <ul>
-    <li>Mayank:
-        <ul>
-            <li>NA Deployment for 1.52.1</li>
-            <li>APAC deployment for 1.52.1</li>
-            <li>Deployed the services for DM team on QAS3, got it smoke tested by Mike</li>
-            <li>Follow up with a developer for GitHub access</li>
-            <li>Had the bastion connectivity overview from Allan</li>
-        </ul>
-    </li>
-    <li>Pavan:
-        <ul>
-            <li>On-call (working on disk space and open transactions)</li>
-            <li>Working on Ansible-playbooks for wildcard cert automation</li>
-            <li>Issues with config file - resolved</li>
-            <li>QAS1 dry run destroy and recreating Neo4j instance -- successful</li>
-            <li>Working on CM requests from user - closed</li>
-        </ul>
-    </li>
-    <li>Vijeesh:
-        <ul>
-            <li>CORMS API - fetch non Merged release branches migration - 80% of implementation Done, most probably will be raising the PR today</li>
-            <li>Supported APAC 1.52.1 Release activity</li>
-            <li>Bastion Access Connectivity Review - Allan</li>
-        </ul>
-    </li>
-    <li>Supriya:
-        <ul>
-            <li>Send MFA cert again for CM-20131, CM-20130</li>
-            <li>Completed Deployment into QANA3 for DM_3.0.0.025</li>
-            <li>Had a DM deployment automation sync-up with Falguni and Mayank</li>
-            <li>Attended Bastion Access Connectivity overview from Allan</li>
-            <li>Worked on CM access tickets</li>
-        </ul>
-    </li>
-    <li>Murali:
-        <ul>
-            <li>Worked with Prajwal from GitHub migration team on resolving the SonarQube scan issue for android repo, facing problem with the sonar token</li>
-            <li>Looking at the permission schemes for the TFS repo, the clean scope will have impact to many users. Need to be discussed with Falguni</li>
-            <li>Consolidating the TFS .NET project repos along with the pipeline jobs to be submitted to Rajendra for the 3.0 migration project</li>
-            <li>Still not able to fix the Fortify scan task on the TFS pipeline, working on same currently</li>
-        </ul>
-    </li>
-    <li>Saptarshi:
-        <ul>
-            <li>Update CA for CORMS Test RDS instance</li>
-            <li>Working on EU S3 costs</li>
-            <li>Setting up the postman for EADM password reset</li>
-            <li>Update CA for NA ParkDB RDS instance</li>
-            <li>Update CA for CORMS prod RDS instance</li>
-            <li>Update CA for Confluence Test RDS instance</li>
-            <li>Update CA for JIRA Test RDS instance</li>
-        </ul>
-    </li>
-    <li>Falguni:
-        <ul>
-            <li>Updated reissued SSL certs for the non-www CO domains</li>
-            <li>Troubleshooting Rhapsody cert issue for QANA7</li>
-            <li>Investigated DBR access issue for APAC</li>
-            <li>Meets: APAC deployment, bastion access, cert renewal, DM auto-deploy</li>
-        </ul>
-    </li>
-    <li>Sudarsana:
-        <ul>
-            <li>On-call paired with Pavan</li>
-            <li>NA and APAC upgrades - 1.52.1</li>
-            <li>QAS3 upgrade per DM request</li>
-            <li>Updated run book for XLR Auto Heal alert violation</li>
-            <li>Follow up with PEARS team on toggles deletion issue</li>
-        </ul>
-    </li>
-</ul>
-</div>
-            <div class="update" data-month="June">
-            <h2>Standup-Update June 10</h2>
-            <ul>
-    <li>Murali:
-        <ul>
-            <li>Regarding the permission restriction, I tried creating a new list of users with modified permission, but was not able revoke the same.</li>
-            <li>Working on the Fortify scan issue for the DMCO projects, The solution fails to build due to missing nuget packages, checking the same with Sumanth.</li>
-            <li>Creating the list DMCO 3.0 projects to be submitted with the GitHub migration team to further analyze and plan for the migration to GitHub.</li>
-            <li>Review of the SCMP document: waiting for the review comments from Rohit/Deepthi.</li>
-        </ul>
-    </li>
-    <li>Supriya:
-        <ul>
-            <li>Worked on SFTP DSN file processing.</li>
-            <li>Worked on MFA ticket request.</li>
-            <li>Worked on access CM tickets.</li>
-            <li>Connected with DM team for QANA3 issue.</li>
-        </ul>
-    </li>
-    <li>Mayank:
-        <ul>
-            <li>All post deployment checklists done for 1.52.1.</li>
-            <li>Working on DM deployment Automation- will target svc boxes to test deploy script.</li>
-            <li>Helped development team with GitHub related issues.</li>
-        </ul>
-    </li>
-    <li>Pavan:
-        <ul>
-            <li>Working on Nginx playbooks to automate Wildcard certs.</li>
-            <li>On-call closed all alerts in PD for last week.</li>
-            <li>Neo4j recreating existing instance successful.</li>
-            <li>Because we are not using enterprise version, we are not able to start service after restarting node - WIP.</li>
-            <li>Have a call with STS1 alert monitoring process with Sudarsana.</li>
-        </ul>
-    </li>
-    <li>Vijeesh:
-        <ul>
-            <li>CORMS API - fetch non Merged release branches migration - PR Raised - Testing is going on, will close today.</li>
-            <li>On-Call Paired UP with Saptarshi - SEV1 alert, Disk Used % > 90.0 for at least 2 minutes on 'PHHDMEUSQL1002 (W:)'.</li>
-            <li>XLR GitHub migration - Planned to work with Sudarsana to understand.</li>
-        </ul>
-    </li>
-    <li>Saptarshi:
-        <ul>
-            <li>On-call this week.</li>
-            <li>Had a discussion with Chris, Zack, Jijo, Falguni regarding Pranay onboarding and KT.</li>
-            <li>Working on CA update for RDS instances.</li>
-            <li>Working on Postman setup regarding EADC migration password change.</li>
-            <li>Shared bastion access details Confluence page to Falguni.</li>
-        </ul>
-    </li>
-    <li>Sudarsana:
-        <ul>
-            <li>On-call paired with Pavan.</li>
-            <li>Paired with Scott on STS1 - BR issue - RePubs execution on STS1.</li>
-            <li>Enable/Disable migrations Confluence doc - in progress.</li>
-        </ul>
-    </li>
-    <li>Falguni:
-        <ul>
-            <li>CM Tickets with Certs updated & closed.</li>
-            <li>Rhapsody NAQA7 cert issue resolved.</li>
-            <li>Meets: Pranay's KT plan, TC Upgrade, Standup.</li>
-        </ul>
-    </li>
-</ul>
-</div>
-              <div class="update" data-month="June">
-            <h2>Standup-Update June 11</h2>
-            <ul>
-    <li>Pavan:
-        <ul>
-            <li>Working on Nginx playbooks to automate Wildcard certs.</li>
-            <li>Neo4j re-building instance successful in QAS1 (Destroy existing ec2 and create same domain name).</li>
-            <li>Because of we are not using enterprise version we are not able to start service after restart node. We are able to replicate configurations & OS optimizations same as existing nodes, but we are not able to enable as a service due to we are not using Enterprise version - PAUSE till further instructions.</li>
-            <li>Worked on Priops account locked & Confluence access.</li>
-        </ul>
-    </li>
-    <li>Mayank:
-        <ul>
-            <li>Worked with development team on an issue with BOM libraries where one library was missing - resolved it as it was deprecated so we didn't require it.</li>
-            <li>Working on DM deployment Automation.</li>
-            <li>Paired up with Falguni to add DM automation stories on Azure.</li>
-        </ul>
-    </li>
-    <li>Sudarsana:
-        <ul>
-            <li>KES republishers execution on STS1 - in progress.</li>
-            <li>Updated Azure board with new/done stories.</li>
-            <li>Branching strategy discussion - Sourav.</li>
-            <li>Paired up with Vijeesh on XLR - Gitlab stories.</li>
-        </ul>
-    </li>
-    <li>Vijeesh:
-        <ul>
-            <li>CORMS API Migration - fetch non Merged release branches API migration:
-                <ul>
-                    <li>Dev Verification completed.</li>
-                    <li>Need to address the PR review comments, Will work with Nick.</li>
-                </ul>
-            </li>
-            <li>OnCall - Paired UP with Saptarshi to resolve below issues:
-                <ul>
-                    <li>EncoreDB Open Transaction over 2 hrs.</li>
-                    <li>Sev 2: Check Rabbit: data.com.philips.rdas.sleepdevice.rawtherapydata.ready consumer Cnt &lt; 21.</li>
-                </ul>
-            </li>
-            <li>XLR github migration - Had an initial round of discussion. Going through the YAML files to understand the functionality.</li>
-        </ul>
-    </li>
-    <li>Falguni:
-        <ul>
-            <li>Request for HMAC Keys for QAS3 and NAQA3 for DM Migration Team.</li>
-            <li>Vault configurations and access: troubleshooting.</li>
-            <li>Validations of Load Balancer configuration on NAQA6 for DM 3.0.</li>
-            <li>Meets: DM auto-deploy.</li>
-        </ul>
-    </li>
-    <li>Murali:
-        <ul>
-            <li>Provided inputs to Prajwal on resolving the SonarQube issue and the same was fixed for the Android part.</li>
-            <li>Will be working on creating a GitHub runner on the iOS machine to check if the GH Actions work on the iOS primary machine with Xcode 14.</li>
-            <li>Provided the list of TFS repos to the Github migration team, will be following up on further actions regarding the same.</li>
-            <li>Regarding the Fortify issue, just found that the changes done by Soumita was impacting the Fortify builds. Will be following up on the same.</li>
-            <li>Will be working on the review comments shared by Rohit on the branching strategy diagram.</li>
-            <li>I was reached by Joop from the Philips IT infra team. He pointed out that we had multiple versions of Java on the build machine and checked if we wanted all of them. Also, he provided the list of users having access to the TFS build machine + the service account (to which many users were having access). Will be setting up a follow-up meeting to discuss the build machine related usage with stakeholders.</li>
-        </ul>
-    </li>
-    <li>Supriya:
-        <ul>
-            <li>Connected with Saptarshi for DBA Onboarding.</li>
-            <li>Worked on DBA - Pranay Kumar Namilakonda onboarding: Priops, NA, APAC bastion. SNOW ticket is created for China, Initiated CF access process.</li>
-            <li>Worked on Brett Stackhouse onboarding: Priops, Octopus.</li>
-            <li>Completed Lucid app access.</li>
-            <li>Connected with testing team for test user creation requirements to check Delete Account Scenarios CM-20229.</li>
-            <li>Worked on some CM tickets.</li>
-            <li>Closed the QANA3 deployment ticket CM-20197.</li>
-        </ul>
-    </li>
-    <li>Saptarshi:
-        <ul>
-            <li>On call.</li>
-            <li>Worked with Vijeesh regarding the PD alerts.</li>
-            <li>Fixed Ops manager agent status in EANA Prod & EA GAMMA.</li>
-            <li>Updated wildcard cert in Scott's Mongo migration test instance.</li>
-            <li>Working on CA upgrade for RDS instances.</li>
-            <li>Worked on CM-19761 regarding Bulk Remove Equipment Assignments for UNO.</li>
-        </ul>
-    </li>
-</ul>
-</div>
-            <div class="update" data-month="June">
-            <h2>Standup-Update June 12</h2>
-           <ul>
-    <li>Sudarsana:
-        <ul>
-            <li>KES RePubs execution and verification completed on STS1.</li>
-            <li>Branching strategy discussion - Sourav.</li>
-            <li>Sync service deployment support - Divyanshu.</li>
-            <li>CORMS DB upgrade support - Saptarshi.</li>
-            <li>TODO: Demo upgrade to latest version 1.52.1.</li>
-        </ul>
-    </li>
-    <li>Murali:
-        <ul>
-            <li>Was in touch with Saran Raj to procure a Mac Book for the POC activities of DM Github Migration (Arpitha has arranged this for the migration team on a temporary basis).</li>
-            <li>Fixed the issue on the Fortify scans; this was happening due to the mismatched nuget versions in the restore task.</li>
-            <li>Soumita came with a build issue on a few services that were breaking due to some missing Assembly files on the workspace, investigating the same currently.</li>
-            <li>Completed working on the review comments on the branching strategy diagram, submitted the same for approval from Deepthi and Rohit to conclude the same.</li>
-            <li>As Nick was not available yesterday, I will follow up on setting up a call regarding the TFS build Machine issues based on his availability.</li>
-        </ul>
-    </li>
-    <li>Saptarshi:
-        <ul>
-            <li>On call this week.</li>
-            <li>Worked with Vijesh regarding the PD alerts.</li>
-            <li>Cleaned up older BRv2 RDS instances under STS1 space.</li>
-            <li>Updated CA for CROMS Prod RDS instance.</li>
-            <li>Working on a request from fix team CM-20244.</li>
-            <li>Working on upcoming HSP CA update planning.</li>
-        </ul>
-    </li>
-    <li>Vijeesh:
-        <ul>
-            <li>OnCall: Paired UP with Saptarshi to resolve below issues:
-                <ul>
-                    <li>Disk Used % > 90.0 for at least 2 minutes on 'PHHDMEUSQL1002 (W:)'</li>
-                    <li>Long Open Transaction (2 hrs)</li>
-                    <li>Raqueue: /sync.com.philips.sapphire.patient.upsert: clustername=rabbit@phheaeurmq query result is < 1.0 for 5 minutes on 'Sev 2.'</li>
-                </ul>
-            </li>
-            <li>CORMS API Migration - fetch non Merged release branches API migration - enhancement:
-                <ul>
-                    <li>Had a discussion with Sudarsan and Mayank.</li>
-                    <li>Implementation is in progress.</li>
-                </ul>
-            </li>
-        </ul>
-    </li>
-    <li>Pavan:
-        <ul>
-            <li>Closed all stories for current sprint other than Nginx wildcard certificate automation.</li>
-            <li>Working on Nginx, Inventory setup done. We are able to authenticate from linuxtools box (need to set up ssh config file to authenticate).</li>
-            <li>Nginx Ansible playbooks - WIP.</li>
-            <li>Neo4j rebuild Jprod in pause till further discussions (service not able to enable in init.d).</li>
-        </ul>
-    </li>
-    <li>Supriya:
-        <ul>
-            <li>Worked on testing team request for test user creation to check Delete Account Scenarios CM-20229.</li>
-            <li>Worked on QA space access request CM-20190.</li>
-            <li>Worked on Onboarding Operations DBA - Pranay Kumar Namilakonda, AWS 1057 Bastion and AWS QA Bastion, AWS console and PMP console. CF id is created and CF space access is granted for EU, APAC, and NA.</li>
-            <li>Followed up with HSDP team for China access for Pranay.</li>
-            <li>Worked on Brett Stackhouse Onboarding: Jira and confluence dashboard, PMP, AWS console, raised ticket to HSDP for Slack access.</li>
-            <li>SFTP DSN file processing.</li>
-            <li>Had a discussion for QANA6 space (SVC and web boxes usage) for deployment automation.</li>
-            <li>Worked on QANA6 deployment request CM-20238.</li>
-        </ul>
-    </li>
-    <li>Mayank:
-        <ul>
-            <li>Was having some issues with connecting to EC2, took Pavan's help in setting up the config, now it is working fine.</li>
-            <li>Working on DM deployment Automation. Starting the deployment on svc0 and web0 boxes today.</li>
-        </ul>
-    </li>
-    <li>Falguni:
-        <ul>
-            <li>Troubleshooting DM Load Balancer issue - no communication over port 444 (observed across all QA envs).</li>
-            <li>Pending (old) CM tickets to closure.</li>
-            <li>Simmodems2 troubleshoot on F5.</li>
-            <li>China MDP1: RCA for Data Processor service offline.</li>
-            <li>Meets: SSL certs (working session with Dan), standups.</li>
-        </ul>
-    </li>
-</ul>
-</div>
-              <div class="update" data-month="June">
-            <h2>Standup-Update June 13</h2>
-            <ul>
-    <li>Saptarshi:
-        <ul>
-            <li>On call this week.</li>
-            <li>Worked with Vijesh regarding the PD alerts.</li>
-            <li>Updated the EADM password in NAQA3.</li>
-            <li>Discussed with Allan & Chris regarding the EU S3 bucket's high cost.</li>
-        </ul>
-    </li>
-    <li>Supriya:
-        <ul>
-            <li>Worked on Onboarding Operations DBA - Pranay Kumar Namilakonda (China bastion completed, initiated cartel access).</li>
-            <li>Worked on Brett Stackhouse Onboarding (newrelic, Care Orchestrator Product Support accounts, AWS 1057bastion access).</li>
-            <li>Worked on DM team request for NAQA6 CM-20237, CM-20238.</li>
-            <li>Worked on DM team for Integrator service "As per the SQL logs I checked, there is an 'Application initiated shutdown: SyncServer shutting down due to an unexpected shutdown, Dev team will look into that.'</li>
-            <li>Had sync-up with Brett and Chris regarding onboarding.</li>
-            <li>Updated Azure DevOps board.</li>
-        </ul>
-    </li>
-    <li>Mayank:
-        <ul>
-            <li>Working on DM deployment automation - WIP.</li>
-            <li>Worked with Sudarsana on including r1_53 branches for NTI trigger.</li>
-            <li>Will help the team on the demo environment releases.</li>
-            <li>Attended Solutions System Demo - PI 2024.2.</li>
-        </ul>
-    </li>
-    <li>Vijeesh:
-        <ul>
-            <li>OnCall: Worked with Saptarshi on PD Alerts.</li>
-            <li>CORMS API Migration - fetch non Merged release branches API migration - enhancement:
-                <ul>
-                    <li>Implementation - Done.</li>
-                    <li>Dev Verification going on.</li>
-                </ul>
-            </li>
-            <li>Attended Solutions System Demo - PI 2024.2.</li>
-        </ul>
-    </li>
-    <li>Falguni:
-        <ul>
-            <li>DM deploy automation troubleshooting - issues of Robocopy over network.</li>
-            <li>DM LB issue troubleshooting (WIP).</li>
-            <li>Meets: team standups, System demo.</li>
-        </ul>
-    </li>
-    <li>Murali:
-        <ul>
-            <li>I tried configuring the MacBook that was given for POC purpose, but the machine had some hardware interface issue. We gave it back to the support team.</li>
-            <li>Working on the build issues of TFS pipelines, will be sharing the findings back with the team for changes.</li>
-            <li>Will be revisiting the MDF APIs from a CICD context, to reduce the usage of Android mobile devices for build and test purposes.</li>
-        </ul>
-    </li>
-    <li>Sudarsana:
-        <ul>
-            <li>Demo env upgraded to 1.49.2.</li>
-            <li>Updated XLR workflow to route 1.53 branch changes to NTI.</li>
-            <li>Sync service demo support.</li>
-            <li>Attended demo and TEDS Trainings completed.</li>
-        </ul>
-    </li>
-    <li>Pavan:
-        <ul>
-            <li>Completed wildcard certificate automation for nginx and uploaded docs to gitlab repo.</li>
-            <li>Call with Falguni about Neo4j rebuilding in jprod.</li>
-            <li>Attended Solutions System Demo - PI 2024.2.</li>
-        </ul>
-    </li>
-</ul>
-</div>
-            <div class="update" data-month="June">
-            <h2>Standup-Update June 14</h2>
-           <ul>
-    <li>Supriya:
-        <ul>
-            <li>Worked on Pranay Kumar Namilakonda onboarding (follow up on cartel access, created a SNOW ticket to HSDP for gw.ap2.hsdp.io and gw.cn1.hsdp.io access).</li>
-            <li>Worked on Brett Stackhouse onboarding (Japan EA HSDP Domain, NA EA SRC Domain, and AWS QA Bastion, SNOW Ticket is created to add SSH key in order to access the China Bastion).</li>
-            <li>Connected with Sumnat and closed CM-20176.</li>
-            <li>For 10.57.90.45 (1057tools01a), changed the instance type from t2.small to t2.large successfully.</li>
-            <li>Attended Demo - Kafka service toolkit, attended Vault | History and WoW meeting.</li>
-            <li>Worked on CM tickets.</li>
-        </ul>
-    </li>
-    <li>Vijeesh:
-        <ul>
-            <li>OnCall: Worked with Saptarshi on PD Alerts.</li>
-            <li>CORMS API Migration - fetch non Merged release branches API migration - enhancement:
-                <ul>
-                    <li>PR - Raised.</li>
-                    <li>Dev Verification, one or two scenarios pending.</li>
-                </ul>
-            </li>
-            <li>Spike XLR GitHub migration.</li>
-            <li>Attended Demo - Kafka Service Toolkit (KST).</li>
-        </ul>
-    </li>
-    <li>Pavan:
-        <ul>
-            <li>Working on Clamav Wildcard automation.</li>
-            <li>Worked on upsize jumpbox in 1057 from t2.small to t2.xlarge.</li>
-            <li>Neo4j re-build review meetings with Falguni.</li>
-            <li>Worked on a couple of user end issues (Confluence and SSH config issues).</li>
-            <li>Attended Kafka tools kit meeting.</li>
-            <li>Working on strongSwan server access with HSDP team.</li>
-        </ul>
-    </li>
-    <li>Murali:
-        <ul>
-            <li>Followed up with Nick on getting TFS build issue solution.</li>
-            <li>Will follow up on the TFS access restriction with Nick today.</li>
-            <li>On DM project, the Android Device issue was causing test cases to fail, fixed the same with help from Yogesh.</li>
-            <li>GH Migration: will be following up on the smoke suite job completion for Android.</li>
-        </ul>
-    </li>
-    <li>Mayank:
-        <ul>
-            <li>Working on DM deployment automation - (WIP on Robocopy step).</li>
-            <li>Had a Vault KT session from Chris.</li>
-            <li>Caught up with some Vault documents on Confluence.</li>
-        </ul>
-    </li>
-    <li>Falguni:
-        <ul>
-            <li>DM deploy automation - troubleshooting folder copy via Robocopy over network.</li>
-            <li>Neo4j Rebuild - setup and execution readiness.</li>
-            <li>Meets: team standups, Vault WoW.</li>
-        </ul>
-    </li>
-    <li>Sudarsana:
-        <ul>
-            <li>Demo env upgraded to 1.49.3, paired with Naveen.</li>
-            <li>Working with Rashmi (DM) on EADC uploads issue.</li>
-            <li>Had a sync up with Pavan on CDSwaggy EADC box and NGNIX wildcard automation.</li>
-            <li>Paired with Nick on envs mapping in Octopus.</li>
-            <li>Updated an Alert policy in EU and APAC.</li>
-        </ul>
-    </li>
-</ul>
-</div>
-            <div class="update" data-month="June">
-            <h2>Standup-Update June 17</h2>
-          <ul>
-    <li>Vijeesh:
-        <ul>
-            <li>OnCall: Worked with Saptarshi on PD Alerts</li>
-            <li>CORMS API Migration - fetch non Merged release branches API migration - enhancement
-                <ul>
-                    <li>Dev Verification - Done</li>
-                </ul>
-            </li>
-            <li>Spike XLR GitHub migration - In Progress</li>
-        </ul>
-    </li>
-    <li>Falguni:
-        <ul>
-            <li>DM Load Balancer Issue - troubleshoot with Zack</li>
-            <li>Ops plan for DM 3.0 with Shalini and Sheela</li>
-            <li>Sync up with Murali - DM mac mini current status & mac OS upgrade plan</li>
-            <li>Meets: ops sync-up</li>
-        </ul>
-    </li>
-    <li>Sudarsana:
-        <ul>
-            <li>EADC issue on CDSwaggy - DNS record was missing</li>
-            <li>Demo upgraded to 1.49.4.1</li>
-            <li>Got the access to GAMMA env</li>
-            <li>1.53 core team meeting updates</li>
-        </ul>
-    </li>
-    <li>Pavan:
-        <ul>
-            <li>Worked with Sudarsana about CDSwaggy server login issues</li>
-            <li>Couple of requests from IOB team to close Jira requests (they are not able to close requests)</li>
-            <li>Working on Wildcard automation clamav inventory & authentication setup</li>
-            <li>Neo4j working and reviewing with Falguni</li>
-        </ul>
-    </li>
-    <li>Mayank:
-        <ul>
-            <li>Working on DM deployment automation - (WIP on robocopy step), figuring out alternative ways</li>
-            <li>On-call this week, will work with Supriya on incidents if any</li>
-            <li>Looking at a blocker for DM team as they do not have outreach service accessible</li>
-        </ul>
-    </li>
-    <li>Murali:
-        <ul>
-            <li>Reviewing the security permission changes done last Friday on TFS branches with Sumanth and team</li>
-            <li>Updated the list of users to Nick on who will have admin access and who will have Read-only access on TFS build machine</li>
-            <li>Supporting the GH migration team on the build issues in GitHub and taking up the iOS build on myself to set up the runner on the primary machine</li>
-        </ul>
-    </li>
-    <li>Supriya:
-        <ul>
-            <li>Worked on Pranay Kumar Namilakonda onboarding (Follow up with HSDP for gw.ap2.hsdp.io and gw.cn1.hsdp.io access, Cartel access is done)</li>
-            <li>Worked on Brett Stackhouse onboarding (Created EncoreAnywhere Product Support Accounts for NA, EU, APAC, and China, initiated CF access)</li>
-            <li>Worked on Chris bastion access CM-20265 (added RSA key for NA, APAC, QA account, SNOW Ticket is created to add SSH key in order to access the China Bastion)</li>
-            <li>Connected with Vijeesh for Philips.RDAS.Encore.DataProcessor on EACHINAMDP01 issue</li>
-            <li>Had a call with Allan for EU bastion license</li>
-            <li>Worked on CM tickets</li>
-            <li>Completed pending Philips university training</li>
-        </ul>
-    </li>
-    <li>Saptarshi:
-        <ul>
-            <li>All the on-call alerts last week had been acknowledged and closed</li>
-            <li>Done with APAC Prod EADM password reset</li>
-            <li>Worked on 3 Fix team issues (CM-20266, CM-19761, CM-20244)</li>
-            <li>Created tickets for disk expand in EU, NA, and APAC EA SQL boxes</li>
-        </ul>
-    </li>
-</ul>
-</div>
-            <div class="update" data-month="June">
-    <h2>Standup-Update June 18</h2>
-    <ul>
-        <li>Vijeesh:
-            <ul>
-                <li>OnCall: Worked with Saptarshi on PD Alerts</li>
-                <li>CORMS API Migration - fetch non Merged release branches API migration - enhancement
-                    <ul>
-                        <li>Dev Verification - Done</li>
-                    </ul>
-                </li>
-                <li>Spike XLR GitHub migration - In Progress</li>
-            </ul>
-        </li>
-        <li>Falguni:
-            <ul>
-                <li>DM Load Balancer Issue - troubleshoot with Zack</li>
-                <li>Ops plan for DM 3.0 with Shalini and Sheela</li>
-                <li>Sync up with Murali - DM mac mini current status & mac OS upgrade plan</li>
-                <li>Meets: ops sync-up</li>
-            </ul>
-        </li>
-        <li>Sudarsana:
-            <ul>
-                <li>EADC issue on CDSwaggy - DNS record was missing</li>
-                <li>Demo upgraded to 1.49.4.1</li>
-                <li>Got the access to GAMMA env</li>
-                <li>1.53 core team meeting updates</li>
-            </ul>
-        </li>
-        <li>Pavan:
-            <ul>
-                <li>Worked with Sudarsana about CDSwaggy server login issues</li>
-                <li>Couple of requests from IOB team to close Jira requests (they are not able to close requests)</li>
-                <li>Working on Wildcard automation clamav inventory & authentication setup</li>
-                <li>Neo4j working and reviewing with Falguni</li>
-            </ul>
-        </li>
-        <li>Mayank:
-            <ul>
-                <li>Working on DM deployment automation - (WIP on robocopy step), figuring out alternative ways</li>
-                <li>On-call this week, will work with Supriya on incidents if any</li>
-                <li>Looking at a blocker for DM team as they do not have outreach service accessible</li>
-            </ul>
-        </li>
-        <li>Murali:
-            <ul>
-                <li>Reviewing the security permission changes done last Friday on TFS branches with Sumanth and team</li>
-                <li>Updated the list of users to Nick on who will have admin access and who will have Read-only access on TFS build machine</li>
-                <li>Supporting the GH migration team on the build issues in GitHub and taking up the iOS build on myself to set up the runner on the primary machine</li>
-            </ul>
-        </li>
-        <li>Supriya:
-            <ul>
-                <li>Worked on Pranay Kumar Namilakonda onboarding (Follow up with HSDP for gw.ap2.hsdp.io and gw.cn1.hsdp.io access, Cartel access is done)</li>
-                <li>Worked on Brett Stackhouse onboarding (Created EncoreAnywhere Product Support Accounts for NA, EU, APAC, and China, initiated CF access)</li>
-                <li>Worked on Chris bastion access CM-20265 (added RSA key for NA, APAC, QA account, SNOW Ticket is created to add SSH key in order to access the China Bastion)</li>
-                <li>Connected with Vijeesh for Philips.RDAS.Encore.DataProcessor on EACHINAMDP01 issue</li>
-                <li>Had a call with Allan for EU bastion license</li>
-                <li>Worked on CM tickets</li>
-                <li>Completed pending Philips university training</li>
-            </ul>
-        </li>
-        <li>Saptarshi:
-            <ul>
-                <li>All the on-call alerts last week had been acknowledged and closed</li>
-                <li>Done with APAC Prod EADM password reset</li>
-                <li>Worked on 3 Fix team issues (CM-20266, CM-19761, CM-20244)</li>
-                <li>Created tickets for disk expand in EU, NA, and APAC EA SQL boxes</li>
-            </ul>
-        </li>
-    </ul>
-</div>
-<div class="update" data-month="June">
-    <h2>Standup-Update June 19</h2>
-    <ul>
-        <li>Vijeesh:
-            <ul>
-                <li>TC-XLR: Update TC references in Common templates to Github actions
-                    <ul>
-                        <li>Implementation in Progress</li>
-                    </ul>
-                </li>
-                <li>Attended - Product Roadmap for solutions & platform</li>
-            </ul>
-        </li>
-        <li>Falguni:
-            <ul>
-                <li>SSL cert renewals - reports.encoreanywhere.com</li>
-                <li>Documentation of steps for reports.encoreanywhere.com, download.encoreanywhere.com on confluence</li>
-                <li>Meets: Product Roadmap, standups</li>
-            </ul>
-        </li>
-        <li>Murali:
-            <ul>
-                <li>Completed the meeting with the MDF team, got inputs on using the MDF API will be working on the same</li>
-                <li>Was working on the BD and Fortify issue of GH POC + was also working TestAutomation POC on GH</li>
-                <li>Worked with Nick to modify the permission set of developers and owners of DMCO DM repositories. Will be connecting once again today with the team</li>
-                <li>Troubleshooting issue on the Jenkins CI pipeline for TestAutomation repository and also for Android Test execution push issue</li>
-            </ul>
-        </li>
-        <li>Mayank:
-            <ul>
-                <li>DM-Deployment Automation- Doing it for web0 box today and will try to get them unblocked for DM team</li>
-                <li>On-call, there was a long open transaction incident resolved it</li>
-                <li>Will look at some enhancement feature stories for GitHub migration</li>
-            </ul>
-        </li>
-        <li>Pavan:
-            <ul>
-                <li>ClamAv Inventory & authentication setup is completed</li>
-                <li>Working on Ansible playbooks to replace wildcard certs - WIP</li>
-                <li>Couple of user requests not able to log in to priops and ssh config issues</li>
-                <li>Review call with Falguni on rebuilding Neo4j in jprod</li>
-            </ul>
-        </li>
-        <li>Saptarshi:
-            <ul>
-                <li>Working on PI3 planning regarding HSP RDS instances CA update</li>
-                <li>Had a call with Karthik and Jaikishor regarding CM-20244</li>
-                <li>Couple of access requests</li>
-            </ul>
-        </li>
-        <li>Supriya:
-            <ul>
-                <li>Worked on DM3.0 deployment CM-30289</li>
-                <li>Meets: standup</li>
-                <li>Rest sick leave</li>
-            </ul>
-        </li>
-        <li>Sudarshana:
-            <ul>
-                <li>Sick Leave - off today</li>
-            </ul>
-        </li>
-    </ul>
-</div>
-            <div class="update" data-month="June">
-    <h2>Standup-Update June 20</h2>
-    <ul>
-        <li>Supriya:
-            <ul>
-                <li>OnCall: Worked with Mayank on PD Alerts</li>
-                <li>Worked on 6 MFA requests</li>
-                <li>Chris Access (Follow up with HSDP for China Bastion, initiated claranet Inwebo access)</li>
-                <li>Pranay Kumar Namilakonda onboarding (gw.cn1.hsdp.io access is completed)</li>
-                <li>Brett Stackhouse onboarding (Cartel access is completed, initiated claranet Inwebo access)</li>
-                <li>Worked on Sleepware source code Developer access CM-20261</li>
-                <li>Had a call with HSDP Saravanan Raghunathan for cartel accounts</li>
-                <li>Worked on CM tickets for Access</li>
-                <li>Meets: Standup, Azure: SAFe template, R&D All Hands/Town Hall - Europe/India Only</li>
-            </ul>
-        </li>
-        <li>Murali:
-            <ul>
-                <li>The TFS repo permission issue has been resolved and fixed for the DM team</li>
-                <li>Was investigating a gating issue reported by TestAutomation team for code smells</li>
-                <li>Created a package for the DM 3.0 with version 3.0.0.026 for Sumanth to be deployed into the QANA3</li>
-                <li>Will continue to work on the MDF API setup process</li>
-            </ul>
-        </li>
-        <li>Sudarsana:
-            <ul>
-                <li>Demo upgraded to 1.49.6.3</li>
-                <li>Supported Ruchika on NTI moncons - completed</li>
-                <li>Paired with Naveen on Lib build failure (Chameleon)</li>
-            </ul>
-        </li>
-        <li>Vijeesh:
-            <ul>
-                <li>TC-XLR: Update TC references in Common templates to Github actions
-                    <ul>
-                        <li>XLR Template creation - in Progress</li>
-                    </ul>
-                </li>
-                <li>Attended - Azure: SAFe template</li>
-                <li>Attended R&D All Hands/Town Hall - Europe/India Only</li>
-            </ul>
-        </li>
-        <li>Mayank:
-            <ul>
-                <li>DM-Deployment Automation- Wasn't feeling well so couldn't do the deploy on web0, will do it today</li>
-                <li>On-call, couple of Database alerts, resolved them</li>
-                <li>There was an issue with Github build not showing the version number for PlatformServiceBOM, worked on that</li>
-                <li>Worked with Murali on a TFS access issue</li>
-                <li>Had the townhall and Azure safe template meetings</li>
-            </ul>
-        </li>
-        <li>Saptarshi:
-            <ul>
-                <li>Working on PI3 planning regarding HSP RDS instances CA update</li>
-                <li>Couple of access requests</li>
-            </ul>
-        </li>
-        <li>Pavan:
-            <ul>
-                <li>ClamAV automation, working on replacing wildcard certificate ansible playbooks</li>
-                <li>Meets: standup, Safe Template, Neo4j review meetings</li>
-                <li>A couple of user end CM requests</li>
-            </ul>
-        </li>
-        <li>Falguni:
-            <ul>
-                <li>DM updates: Sync up with Shalini (NAQA6 stability issues, Ops Plan Doc)</li>
-                <li>Neo4j Node Rebuild - WIP</li>
-                <li>Meets: Townhall, standup</li>
-            </ul>
-        </li>
-    </ul>
-</div>
-
-        <div class="update" data-month="June">
-    <h2>Standup-Update June 25</h2>
-    <ul>
-        <li>Pavan:
-            <ul>
-                <li>On-call this week, working on alerts</li>
-                <li>Working on wildcard certificate automation</li>
-                <li>Couple of requests from QA team not able to login to servers</li>
-            </ul>
-        </li>
-        <li>Mayank:
-            <ul>
-                <li>DM-Deployment Automation- done for web box also, exploring ways for central config files</li>
-                <li>Looked at the Jenkins issue, current apt-release-hashicorp has been deprecated</li>
-                <li>Had the domain session with Julie on CO, COE, algorithms, and devices</li>
-            </ul>
-        </li>
-        <li>Sudarsana:
-            <ul>
-                <li>On-call with Pavan</li>
-                <li>1.53 infra automation call with Sourav</li>
-                <li>NTI space gone into inconsistent state - resolved</li>
-                <li>UI Mono repo build issue - Suprita</li>
-                <li>Paired with Chris on ups automation and co web response time issue</li>
-            </ul>
-        </li>
-        <li>Vijeesh:
-            <ul>
-                <li>TC-XLR: Update TC references in Common templates to Github actions - In Progress
-                    <ul>
-                        <li>GitHub workflow_dispatch execution through XLR implementation done, Also discussed the status with Nick and Sudarsana</li>
-                        <li>Explored GitHub API to get fetch the workflow execution status</li>
-                        <li>Implementing Python script to report the workflow status in the XLR</li>
-                    </ul>
-                </li>
-                <li>Attended - SRC Domain Sessions with Julie Yarascavitch, Director, Clinical Marketing - Therapy Platforms</li>
-            </ul>
-        </li>
-        <li>Falguni:
-            <ul>
-                <li>SSL Certs: CSR generated and requested to Digicert</li>
-                <li>DM Issue: CDSwaggy EADC db sp issue troubleshooting</li>
-                <li>DM QA6: v3.0 Full RC deployment - strategy and issues</li>
-                <li>Meets: session with Julie, Cert syncup</li>
-            </ul>
-        </li>
-        <li>Murali:
-            <ul>
-                <li>Supported DMCO team for QANA3 and QANA6 environment deployments by creating the package DM 3.0.0 Packages</li>
-                <li>Fixed pipeline issues related to DM Mobility project</li>
-                <li>Will follow up with Darshan and Aditya on the MDF API issue</li>
-                <li>Troubleshoot the permission issues faced by developers on the DM TFS repositories</li>
-            </ul>
-        </li>
-        <li>Supriya:
-            <ul>
-                <li>Worked on 6 MFA requests</li>
-                <li>Completed Deployment into QANA6 3.0.0.029 (CM-20313)</li>
-                <li>Worked on QANA3 request CM-20311</li>
-                <li>Meet: SRC Domain Sessions with Julie Yarascavitch, Director, Clinical Marketing - Therapy Platforms</li>
-                <li>Worked on CM tickets</li>
-                <li>Connected with Mayank for DM deployment automation</li>
-            </ul>
-        </li>
-    </ul>
-</div>
-            <div class="update" data-month="June">
-    <h2>Standup-Update June 26</h2>
-    <ul>
-        <li>Pavan:
-            <ul>
-                <li>On-call, working on alerts</li>
-                <li>Jenkins pipeline issues resolved, worked with Mayank</li>
-                <li>Wildcard certificate automation ClamAV - WIP</li>
-                <li>Meets: standup, Mayank</li>
-            </ul>
-        </li>
-        <li>Vijeesh:
-            <ul>
-                <li>TC-XLR: Update TC references in Common templates to Github actions - In Progress
-                    <ul>
-                        <li>Implementation python script to report the workflow status - Done</li>
-                        <li>Integrating script with XLR Tool and verification - In Progress</li>
-                    </ul>
-                </li>
-                <li>Attended - Insight into Japan SRC Market</li>
-            </ul>
-        </li>
-        <li>Murali:
-            <ul>
-                <li>Was investigating SQ issue with the Test automation team relating to the code smells numbers on the main branch</li>
-                <li>Supported the DMCO team with the permission related issue</li>
-                <li>Checked with COE team on the TFS build machine permission restriction related task</li>
-                <li>Was checking on the ECCN and SGI numbers applicable for the DM project/repositories</li>
-            </ul>
-        </li>
-        <li>Mayank:
-            <ul>
-                <li>DM-Deployment Automation - refined some scripts for better visibility</li>
-                <li>Worked on the Jenkins issue - now the changes are reflecting and the build is passing</li>
-                <li>Worked with Sudarsana on 1.53 changes and timeline</li>
-            </ul>
-        </li>
-        <li>Sudarsana:
-            <ul>
-                <li>On-call with Pavan</li>
-                <li>Twilio infra automation - vault setup</li>
-                <li>Paired with Mayank on Jenkins build failure</li>
-                <li>Figured the NTI inconsistencies on informal testing</li>
-            </ul>
-        </li>
-        <li>Falguni:
-            <ul>
-                <li>SSL Certs: qana-modems renewed</li>
-                <li>DM Issue: CDSwaggy EADC issue - changes in Octopus Project</li>
-                <li>Japan Team sync ups</li>
-                <li>Meets: Insight into Japan market, standups</li>
-            </ul>
-        </li>
-        <li>Supriya:
-            <ul>
-                <li>Connected with Sumant for QANA6 (After register on PCM, web page is redirecting to home page) CM-20313</li>
-                <li>Worked on Pranay Kumar Namilakonda and Brett Stackhouse NA EADC access</li>
-                <li>Connected with Pavan for EADC access</li>
-                <li>Worked on Documentation Of Install_PCMSites_On_IIS</li>
-                <li>Connected with user for QA3 bastion setup CM-20190</li>
-                <li>Worked on some CM access related tickets</li>
-                <li>Meet: standups, Regarding Jira Board tickets update, Insight into Japan SRC Market</li>
-            </ul>
-        </li>
-    </ul>
-</div>
-            <div class="update" data-month="July">
-    <h2>Standup-Update July 1</h2>
-    <ul>
-        <li>Supriya:
-            <ul>
-                <li>Worked on MFA request</li>
-                <li>Worked on CM access tickets</li>
-                <li>Meet: Standup, DM Deployment discussion</li>
-                <li>Worked on DM deployment automation testing with team</li>
-                <li>Attended Confluence upgrade 7.19.24</li>
-            </ul>
-        </li>
-        <li>Pavan:
-            <ul>
-                <li>On-call, working on PagerDuty alerts</li>
-                <li>Wildcard certification automation for ClamAV - WIP</li>
-                <li>Meets: standups, Sudarshana, Confluence upgrade</li>
-            </ul>
-        </li>
-        <li>Mayank:
-            <ul>
-                <li>DM-Deployment Automation - completed the initial testing</li>
-                <li>Looking at the GitHub migration stories</li>
-                <li>Worked on the Jenkins issue with Pavan and Nick</li>
-            </ul>
-        </li>
-        <li>Vijeesh:
-            <ul>
-                <li>TC-XLR: Update TC references in Common templates to GitHub actions - In Progress
-                    <ul>
-                        <li>Dev Verification and some exception handling - Done</li>
-                        <li>Configuration update for GitHub workflow_dispatch in XLR Template - Done</li>
-                        <li>Review - In Progress</li>
-                        <li>Spike TeamCity build pipeline workflow migration to GitHub action - In Progress</li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-        <li>Sudarsana:
-            <ul>
-                <li>On-call with Pavan</li>
-                <li>Twilio infra automation - completed</li>
-                <li>Paired with Developer on MSK integration to STS1</li>
-                <li>Involved in DM deployment automation call, Jenkins migrate call</li>
-            </ul>
-        </li>
-        <li>Falguni:
-            <ul>
-                <li>Jenkins Mobile Upgrade: Plan & Further steps</li>
-                <li>Confluence Upgrade (test & prod)</li>
-                <li>Meets: DM auto-deploy verification, standups</li>
-            </ul>
-        </li>
-    </ul>
-</div>
-            <div class="update" data-month="June">
-    <h2>Standup-Update June 18</h2>
-    <ul>
-        <li>Supriya:
-            <ul>
-                <li>Worked on MFA request</li>
-                <li>Worked on CM access tickets</li>
-                <li>Meet: Standup, DM Deployment discussion</li>
-                <li>Worked on DM deployment automation testing with team</li>
-                <li>Attended Confluence upgrade 7.19.24</li>
-            </ul>
-        </li>
-        <li>Pavan:
-            <ul>
-                <li>On-call last week, resolved all alerts</li>
-                <li>Wildcard automation and documentation - WIP</li>
-                <li>Attended & completed successfully Jira upgrade on prod A1 node</li>
-                <li>Meets: stand-up, CO deployment 1r_53, Jira upgrade</li>
-            </ul>
-        </li>
-        <li>Mayank:
-            <ul>
-                <li>TC-References for Github Migration, still looking into it</li>
-                <li>Had DM Automation sync up with Brett and Zack</li>
-                <li>RC1 for 1.53, worked with Sudarsana</li>
-            </ul>
-        </li>
-        <li>Sudarsana:
-            <ul>
-                <li>On-call with Pavan</li>
-                <li>1.53.0 RC1 deployment on to QAS1</li>
-                <li>RC1 issue troubleshooting with Nick</li>
-                <li>STS1 MSK know deployment failing - Manoj, Scott</li>
-            </ul>
-        </li>
-        <li>Vijeesh:
-            <ul>
-                <li>TC-XLR: Update TC references in Common templates to Github actions
-                    <ul>
-                        <li>Workflow dispatch API Integration - Review Done, task closed</li>
-                        <li>Spike TeamCity build pipeline workflow migration to Github action - In Progress</li>
-                    </ul>
-                </li>
-                <li>OnCall: Working with Saptarshi on PD Alerts</li>
-            </ul>
-        </li>
-        <li>Falguni:
-            <ul>
-                <li>SSL Cert Renewal: qana7modems2</li>
-                <li>Cert Renewal doc: WIP</li>
-                <li>DM request for HMAC key issue: initial findings</li>
-                <li>Meets: Jira Upgrade, SSL cert-tooling, DM deploy checkpoint, standup</li>
-            </ul>
-        </li>
-        <li>Murali:
-            <ul>
-                <li>Discussion with Falguni on the mobile Jenkins usage and migration of jobs from the same into RAD Jenkins</li>
-                <li>Access required for RAD Jenkins to complete the work on POC + on the notification issue of token deletion</li>
-            </ul>
-        </li>
-        <li>Saptarshi:
-            <ul>
-                <li>Back after vacation today</li>
-            </ul>
-        </li>
-    </ul>
-</div>
-            <div class="update" data-month="July">
-    <h2>Standup-Update July 2</h2>
-    <p><strong>Pavan:</strong>
-        <ul>
-            <li>wildcard certificate automation is done for clamav, nginx, neo4j with rollback options.</li>
-            <li>Wildcard automation documentation is done updated confluence docs.</li>
-            <li>working neo4j rebuild - WIP</li>
-            <li>meets: standup, platform system demo, customer connect sessions</li>
-        </ul>
-    </p>
-    <p><strong>Mayank:</strong>
-        <ul>
-            <li>TC-References for Github Migration, created a branch and replacing the references with Github repos.</li>
-            <li>DM Automation, have to look at the steps failing.</li>
-            <li>Looked at some CM tickets.</li>
-            <li>Meets - System Demo, Customer connect</li>
-        </ul>
-    </p>
-    <p><strong>Sudarsana:</strong>
-        <ul>
-            <li>TherapyData addition to QAS1 RC1 deployment</li>
-            <li>Had discussion with Sandhya on RNs</li>
-            <li>Had a sync-up with Nick on IAC additions into RNs and aurora seeding</li>
-            <li>Had a sync-up with Ruchika on SIs and deployments</li>
-            <li>Sessions: DM customer connect and platform demo</li>
-        </ul>
-    </p>
-    <p><strong>Vijeesh:</strong>
-        <ul>
-            <li>TC-XLR: Update TC references in Common templates to Github actions</li>
-            <li>Spike TeamCity build pipeline workflow migration to github action - In Progress</li>
-            <li>Platform: 2024 PI.2 System Demo</li>
-            <li>Customer Connect Session with Tameria Tomman & Kevin Rush on DreamMapper</li>
-            <li>OnCall: Working with Saptarshi on PD Alerts</li>
-        </ul>
-    </p>
-    <p><strong>Falguni:</strong>
-        <ul>
-            <li>exploring on Mendix</li>
-            <li>SSL cert renewal doc update</li>
-        </ul>
-    </p>
-    <p><strong>Murali:</strong>
-        <ul>
-            <li>[Blocker] RAD jenkins access required to start working on the POC</li>
-            <li>Working on DM pipeline relating to notifications issue reported by the TestAutomation team</li>
-            <li>Worked on generating the SCA reports for the DM 3.0 projects.</li>
-            <li>Fortify scan are being requested for all the services on the backend side by deepthi (need to discuss on this before starting work on the same).</li>
-            <li>Attended system demo and customer connect session by tameria.</li>
-        </ul>
-    </p>
-    <p><strong>Supriya:</strong>
-        <ul>
-            <li>Completed RC DM 3.0.0.030 deployment in NAQA6</li>
-            <li>Worked on QANA3 request to Update latest ClientSecret key CM-20368</li>
-            <li>Connected with Sumant to troubleshoot Philips Healthcare PatientSyncService in QANA6</li>
-            <li>worked on CM access tickets</li>
-            <li>Completed 3 MFA request for CO account (APAC)</li>
-            <li>meets: Standup, Platform: 2024 PI.2 System Demo, Customer Connect Session on DreamMapper</li>
-        </ul>
-    </p>
-    <p><strong>Saptarshi:</strong>
-        <ul>
-            <li>On call this week</li>
-            <li>Having a couple of KT sessions with Pranay</li>
-            <li>Send China & Neo4j monthly reports</li>
-            <li>Rectify the Ops Manager connectivity issue for EA NA and EA Gamma</li>
-            <li>Worked on Sagar & Ajith PostgreSQL access request</li>
-        </ul>
-    </p>
-</div>
-<div class="update" data-month="July">
-    <h2>Standup-Update July 3</h2>
-    <p><strong>Pranay:</strong></p>
-    <ul>
-        <li>KT: WIP</li>
-        <li>access issues: follow ups & config setup</li>
-    </ul>
-    <p><strong>Pavan:</strong></p>
-    <ul>
-        <li>have a call with field engineering team about KES access for 2 users.</li>
-        <li><a href="https://jira-datacenter.sapphirepri.com/browse/CM-20390">CM-20390</a> -- closed</li>
-        <li><a href="https://jira-datacenter.sapphirepri.com/browse/CM-20391">CM-20391</a> -- WIP</li>
-        <li>for neo4j we have resolved start issue after reboot (enabled using cron job).</li>
-        <li>working on 4 users on-boarding requests</li>
-        <li><a href="https://jira-datacenter.sapphirepri.com/browse/CM-20393">CM-20393</a> -- closed</li>
-        <li><a href="https://jira-datacenter.sapphirepri.com/browse/CM-20394">CM-20394</a> -- WIP</li>
-        <li>meets: stand-up, field engineering team, DevOps tech talk.</li>
-    </ul>
-    <p><strong>Saptarshi:</strong></p>
-    <ul>
-        <li>On call this week</li>
-        <li>Having a couple of KT sessions with Pranay</li>
-        <li>Worked with Allan & Supriya regarding Pranay's access</li>
-        <li>Fix team issue script execution</li>
-    </ul>
-    <p><strong>Supriya:</strong></p>
-    <ul>
-        <li>worked on Pranay Onboarding ticket (SNOW ticket to HSDP for EADC EU PRODUCTION and EADC APAC PRODUCTION access)</li>
-        <li>worked on Brett Onboarding ticket (Sent Instruction for EU EA EUENCORE Domain setup)</li>
-        <li>worked on CM access tickets</li>
-        <li>Completed 3 MFA requests for CO account (APAC)</li>
-        <li>Worked on QANA6 request to test a scenario when the services are not running CM-20395 and CM-20397</li>
-        <li>worked on Enabling a user priops account</li>
-        <li>Meets: Standups, SRC DevOps Tech-talk, Jira Board Review</li>
-    </ul>
-    <p><strong>Falguni:</strong></p>
-    <ul>
-        <li>explore SSL cert renewal on Mendix for mynightbalance</li>
-        <li>DM auto-deploy: planning for next steps</li>
-        <li>DM Jenkins & TFS issues: troubleshooting with Murali</li>
-        <li>meets: SSL cert renewal, weekly tech talk, standups</li>
-    </ul>
-</div>
-<div class="update" data-month="July">
-    <h2>Standup-Update July 4</h2>
-    <p><strong>Supriya:</strong></p>
-    <ul>
-        <li>SFTP DSN file processing</li>
-        <li>Had a discussion Regarding DB write access for naqa3dmsql0 for DM testing</li>
-        <li>Had a syncup with DM team Sumant for backdated user creation in QANA3</li>
-        <li>worked on QANA3 request for update creation date records in PCMPatient and PCMUser DB CM-20409</li>
-        <li>Completed Brandon Dineff onboarding CM-20387</li>
-        <li>Worked on Pranay Onboarding (created newrelic account, EncoreAnywhere Product Support accounts for NA, EU, APAC, and China)</li>
-        <li>worked on CM extended access tickets</li>
-        <li>Meets: Standup, Platform: 2024 PI.3 Draft Plan Presentation</li>
-        <li>worked on an email for priops account enable Sakaguchi, Kensei</li>
-    </ul>
-    <p><strong>Pavan:</strong></p>
-    <ul>
-        <li>have a call with field engineering team about KES access for one user.</li>
-        <li><a href="https://jira-datacenter.sapphirepri.com/browse/CM-20391">CM-20391</a> -- WIP</li>
-        <li>working on 3 users on-boarding requests (initiated CF access and helped users to install cygwin & CF)</li>
-        <li><a href="https://jira-datacenter.sapphirepri.com/browse/CM-20394">CM-20394</a> -- WIP</li>
-        <li>meets: stand-up, Developer tech talks, platform PI.3 draft plan.</li>
-        <li>Neo4j rebuild developments - WIP</li>
-    </ul>
-    <p><strong>Saptarshi:</strong></p>
-    <ul>
-        <li>On call this week</li>
-        <li>Having a couple of KT sessions with Pranay</li>
-        <li>Worked on Ajith PostgreSQL access ticket</li>
-    </ul>
-    <p><strong>Mayank:</strong></p>
-    <ul>
-        <li>Participated in Dev days workshop, optimizing docker images and SBOM generation</li>
-        <li>Worked on the Github migration story</li>
-    </ul>
-    <p><strong>Falguni:</strong></p>
-    <ul>
-        <li>concluded DB access concerns for Pooja (test team)</li>
-        <li>Tasks plan-out for PI.3</li>
-        <li>meets: PI Plan, Standups</li>
-    </ul>
-</div>
-<div class="update" data-month="July">
-    <h2>Standup-Update July 5</h2>
-    <p><strong>Murali:</strong></p>
-    <ul>
-        <li>Noted issue with DM Android baseline reset job with connectivity to Gitlab</li>
-        <li>Created the Package for release on QANA6 env for the DMCO team (3.0.0.031)</li>
-        <li>Was part of the Developer days workshop "Automate anything session"</li>
-        <li>Working on getting the SCA and Blackduck scans done on the DMCO backend services. Will be discussing with the Fortify team on the creation of versions as well.</li>
-        <li>Working on setting up the node on the jenkins.sapphirepri.com for POC.</li>
-    </ul>
-    <p><strong>Vijeesh:</strong></p>
-    <ul>
-        <li>OnCall: Working with Saptarshi on PD Alerts</li>
-        <li>TC-XLR: Update TC references in Common templates to Github actions</li>
-        <ul>
-            <li>TeamCity build pipeline workflow migration to Github action - Spike Done</li>
-            <li>Implementation - In progress.</li>
-        </ul>
-        <li>Attended: Software Center of Excellence events, Automate everything</li>
-    </ul>
-    <p><strong>Pavan:</strong></p>
-    <ul>
-        <li>Working on 3 users on-boarding requests.</li>
-        <li><a href="https://jira-datacenter.sapphirepri.com/browse/CM-20394">CM-20394</a> -- WIP</li>
-        <li>NewRelic monitoring discussion with Sudarsana about Neo4j jprod rebuild.</li>
-        <li>Meets: stand-up, sync-up with Sudarsana.</li>
-        <li>Neo4j rebuild developments - WIP</li>
-    </ul>
-    <p><strong>Supriya:</strong></p>
-    <ul>
-        <li>Worked on TFS access CM-20399</li>
-        <li>Worked on Brett Stackhouse Onboarding request and closed CM-20223</li>
-        <li>Worked on 2 MFA Renewal requests for APAC</li>
-        <li>Connected with Pranay for setup of Cartel access</li>
-        <li>Worked on Pranay Onboarding request CM-20403 (CARE ORCHESTRATOR Product Support accounts for NA, EU, APAC, and China)</li>
-        <li>Worked on CM access tickets</li>
-        <li>Worked on QANA6 request where few test scenarios need to check when QANA6 is down CM-20414</li>
-        <li>Meet: Standup</li>
-    </ul>
-    <p><strong>Sudarsana:</strong></p>
-    <ul>
-        <li>1.53 QAS1 RC1 stabilized</li>
-        <li>Developer days workshop</li>
-        <li>Worked with the PEARS team on the QAS3 space issue</li>
-        <li>Paired with Rasmi on CTI deployment failure</li>
-        <li>Supported Sourav and Manoj on Qualcomm issue</li>
-    </ul>
-    <p><strong>Falguni:</strong></p>
-    <ul>
-        <li>CM-20279 DB Issues on CDSwaggy WIP</li>
-        <li>NAQA6 issues troubleshooting</li>
-        <li>Task plan-out for PI.3</li>
-        <li>Meets: standups</li>
-    </ul>
-</div>
-<div class="update" data-month="July">
-    <h2>Standup-Update July 8</h2>
-    <p><strong>Murali:</strong></p>
-    <ul>
-        <li>Android DM baseline reset job issue got resolved.</li>
-        <li>Discussed the Fortify Scans issues with the SCA team and they recommended that the scans be run on individual services/packages.</li>
-        <li>Raised a DOST request and got the versions created for all the services mentioned in the DM 3.0 package.</li>
-        <li>Still working on the Blackduck scan issue on the TFS build machine, connected with Soumita on the same last Friday.</li>
-        <li>Will connect with Falguni to work on the build node setup with jenkins.sapphirepri.com for the job migration POC.</li>
-    </ul>
-    <p><strong>Vijeesh:</strong></p>
-    <ul>
-        <li>OnCall: Worked with Saptarshi on PD Alerts</li>
-        <li>TC-XLR: Update TC references in Common templates to Github actions</li>
-        <ul>
-            <li>Precious repo migration - In Progress.</li>
-        </ul>
-    </ul>
-    <p><strong>Mayank:</strong></p>
-    <ul>
-        <li>There was an issue with email seeding on CTI and NTI, worked with developer to resolve it.</li>
-        <li>On-call this week</li>
-        <li>Will finish up on the Github integration story</li>
-    </ul>
-    <p><strong>Saptarshi:</strong></p>
-    <ul>
-        <li>On call last week</li>
-        <li>Couple of access tickets</li>
-    </ul>
-    <p><strong>Sudarsana:</strong></p>
-    <ul>
-        <li>Neo4j monitoring options with NR - done</li>
-        <li>Moncons to Elastic feature, SIs - discussion with Ruchika</li>
-        <li>Identifying the support stories/planning board</li>
-        <li>Plan for Demo upgrade to 1.52.1</li>
-    </ul>
-    <p><strong>Falguni:</strong></p>
-    <ul>
-        <li>DB-SP Issues on CDSwaggy WIP</li>
-        <li>DM Fortify Project access issue for Soumita</li>
-        <li>DM deployment planning for query execution (EULA popups for expired logins)</li>
-        <li>Meets: standups</li>
-    </ul>
-</div>
-<div class="update" data-month="July">
-    <h2>Standup-Update July 9</h2>
-    <p><strong>Murali:</strong></p>
-    <ul>
-        <li>DM iOS team have asked to upgrade the MacOS OS to Sonoma and Xcode to version 15.</li>
-        <li>Working on Fortify scan setup for all the Services of DMCO 3.0 (completed half out of 25 services).</li>
-        <li>Blackduck scan issue still persists; need to fix the proxy issue.</li>
-        <li>Had a call with Rajendra to complete the GH migration POC for the 3.0 and 2.x DM TFS repositories in the upcoming PI.</li>
-    </ul>
-    <p><strong>Vijeesh:</strong></p>
-    <ul>
-        <li>TC-XLR: Update TC references in Common templates to Github actions</li>
-        <ul>
-            <li>Did exploration related with Gradle.</li>
-            <li>Facing issues while migrating Gradle-related tasks, working on that.</li>
-            <li>Code tests repo migration - In Progress.</li>
-        </ul>
-    </ul>
-    <p><strong>Supriya:</strong></p>
-    <ul>
-        <li>Worked on testing team request for EULA Popup and Password Expiration Scenarios on QANA6 CM-20418.</li>
-        <li>Completed 2 MFA requests for CO account (APAC).</li>
-        <li>SFTP DSN file processing.</li>
-        <li>Completed RC 3.0.0.033 Deployment into QANA6 CM-20416.</li>
-        <li>Worked on CM access tickets.</li>
-        <li>Meets: Standup, Solutions ART - PI 2024.3 Draft Plan Review.</li>
-        <li>Updated Azure Board.</li>
-    </ul>
-    <p><strong>Falguni:</strong></p>
-    <ul>
-        <li>DM Issue wrt Outreach service: troubleshoot.</li>
-        <li>SSL Certs renewed, update tracker.</li>
-        <li>Meets: PI planning, standups.</li>
-    </ul>
-    <p><strong>Sudarsana:</strong></p>
-    <ul>
-        <li>Neo4j monitoring discussion with Pavan.</li>
-        <li>Gone through Azure board features.</li>
-        <li>Toggles discussion with Sandhya.</li>
-        <li>Call with Vijeesh on core tests build migration.</li>
-        <li>CO Draft plan meeting.</li>
-    </ul>
-    <p><strong>Mayank:</strong></p>
-    <ul>
-        <li>TFS access issue for Priyanka, resolved it.</li>
-        <li>On-call with Supriya and Falguni for RC deployment.</li>
-        <li>Trying to set up sandbox XLR for testing the changes in reference to Github.</li>
-        <li>Worked with Murali on TFS build fortify step.</li>
-    </ul>
-</div>
-
-
-            <!-- Add more updates as needed -->
+<body class="bg-gray-100">
+    <!-- Fixed Header -->
+    <div class="fixed-header">
+        <div class="container mx-auto px-4">
+            <h1 class="text-3xl md:text-4xl font-bold text-white">Mayank Inani</h1>
+            <h2 class="text-xl md:text-2xl text-white opacity-90">Software Engineer I</h2>
         </div>
     </div>
-    <script>
-        function filterUpdates() {
-            const filterValue = document.getElementById('monthFilter').value;
-            const updates = document.getElementsByClassName('update');
 
-            for (let i = 0; i < updates.length; i++) {
-                if (filterValue === 'all' || updates[i].getAttribute('data-month') === filterValue) {
-                    updates[i].style.display = 'block';
-                } else {
-                    updates[i].style.display = 'none';
+    <!-- Hero Section -->
+    <header class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20">
+        <div class="container mx-auto px-4">
+            <div class="hero-content">
+                <div class="profile-container">
+                    <img src="Profile Picture.jpeg" alt="Mayank Inani" class="profile-image">
+                </div>
+                <div class="hero-text">
+                    <div class="prose prose-xl text-gray-100 mb-8">
+                <p>DevOps | Cloud Engineer | AI Enthusiast</p>
+                <p>I'm a Software Engineer at Philips India Ltd, working on DevOps, CI/CD, and cloud infrastructure across mission-critical healthcare platforms. My experience spans building robust deployment pipelines, managing cloud-native applications, and automating infrastructure at scale.</p>
+                <p>From designing end-to-end CI/CD pipelines using GitHub Actions, Jenkins, and Octopus, to migrating platforms from Cloud Foundry to Kubernetes (EKS), I've helped streamline development and operations, reduce downtime, and improve deployment efficiency by over 5x.</p>
+                <p>I work hands-on with tools like AWS, Docker, Kubernetes, CloudWatch, New Relic, and ELK Stack, and I'm passionate about clean automation, scalable infrastructure, and continuous learning. I'm also experienced in scripting, application monitoring, and production troubleshooting across Windows and Linux environments.</p>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="mailto:inanimayank7737@gmail.com" class="bg-white text-blue-600 px-6 py-2 rounded-full hover:bg-gray-100 transition">Email: inanimayank7737@gmail.com</a>
+                        <a href="https://www.linkedin.com/in/inanimayank/" target="_blank" class="bg-white text-blue-600 px-6 py-2 rounded-full hover:bg-gray-100 transition">LinkedIn</a>
+                        <a href="Mayank's Resume.pdf" target="_blank" class="bg-white text-blue-600 px-6 py-2 rounded-full hover:bg-gray-100 transition">Resume</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Work Experience Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center">Work Experience</h2>
+            <div class="space-y-12">
+                <div class="border-l-4 border-blue-600 pl-4">
+                    <h3 class="text-xl font-semibold">Software Engineer</h3>
+                    <h4 class="text-lg text-gray-600">Philips India Ltd</h4>
+                    <p class="text-gray-500 mb-4">July 2023 - Present</p>
+                    <div class="prose max-w-none">
+                        <p><strong>Tech Stack:</strong> AWS (EC2, S3, RDS, CloudFormation), TeamCity, Jenkins, Octopus, Docker, Kubernetes, Python, Git, Github Actions, ELK Stack, CloudWatch, New Relic.</p>
+                        <ul class="list-disc pl-6">
+                            <li><strong>Care Orchestrator:</strong> Designed and implemented an CI/CD pipeline, streamlining deployments using the CORMS (Release Management System).<br>Enhanced troubleshooting and maintenance capabilities across critical services, including Neo4j, DocDB, RabbitMQ, ELK Stack, and Cloud Foundry.<br>Acquired extensive knowledge of Agile methodologies and enterprise-scale product development practices.</li>
+                            <li><strong>Tools Migration:</strong> Facilitated the migration of applications from Cloud Foundry to EKS-based microservices, establishing efficient CI/CD pipelines for enhanced performance.<br>Led the transition from GitLab to GitHub, including migrating TeamCity build processes to GitHub Actions for improved integration and workflow efficiency.</li>
+                            <li><strong>Dream Mapper:</strong> Reduced manual deployment effort by 90% and improved deployment speed by 5x through the creation of automated Octopus Deploy projects.<br>Developed expertise in managing and troubleshooting Windows Server-based applications and instances.</li>
+                            <li><strong>Operations:</strong> Automated alerts for production environments, enhancing monitoring and reducing downtime across Cloud applications and spaces.<br>Gained hands-on experience in maintaining and optimizing production environments, ensuring high availability and reliability.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="border-l-4 border-blue-600 pl-4">
+                    <h3 class="text-xl font-semibold">Software Engineer Intern</h3>
+                    <h4 class="text-lg text-gray-600">Philips India Ltd</h4>
+                    <p class="text-gray-500 mb-4">Jan 2023 - July 2023</p>
+                    <div class="prose max-w-none">
+                        <p><strong>Tech Stack:</strong> C#, .NET, Docker, Kubernetes, GitHub, Azure, Redis, Kafka, PostgreSQL, Prometheus</p>
+                        <ul class="list-disc pl-6">
+                            <li><strong>GitHub Actions:</strong> Developed and deployed custom GitHub Actions to build and deploy code on on-premises machines, streamlining development workflows.<br>Integrated Fortify and BlackDuck scans into GitHub Actions pipelines to ensure robust security and compliance in branch code.</li>
+                            <li><strong>Docker and Kubernetes Application Deploy:</strong> Successfully deployed the complete PIX Platform on local environments and virtual machines using ArgoCD, Helm charts, and Docker images.<br>Gained extensive hands-on experience in creating, managing, and optimizing Docker images, as well as deploying and orchestrating applications with Kubernetes.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="py-16 bg-gray-50" id="certifications-section">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">Certifications</h2>
+            <div class="flex justify-center space-x-4 mb-8" id="certification-filters">
+                <button data-category="Devops"
+                        class="px-4 py-2 rounded-full border border-blue-600 bg-blue-600 text-white hover:bg-blue-600 hover:text-white transition active">
+                    Devops
+                </button>
+                <button data-category="AI"
+                        class="px-4 py-2 rounded-full border border-blue-600 bg-white text-blue-600 hover:bg-blue-600 hover:text-white transition">
+                    AI
+                </button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="certifications-grid">
+                <div class="certification-item bg-white p-6 rounded-lg shadow-md transition transform hover:-translate-y-1" data-category="Devops">
+                    <h3 class="text-xl font-semibold mb-2">AWS Essential Training</h3>
+                    <p class="text-gray-600 mb-4">2023</p>
+                    <a href="CertificateOfCompletion_AWS Essential Training for Developers.pdf" target="_blank" class="text-blue-600 hover:underline">View Certificate</a>
+                </div>
+                <div class="certification-item bg-white p-6 rounded-lg shadow-md transition transform hover:-translate-y-1" data-category="Devops">
+                    <h3 class="text-xl font-semibold mb-2">DevOps Foundations</h3>
+                    <p class="text-gray-600 mb-4">2023</p>
+                    <a href="CertificateOfCompletion_DevOps Foundations 2016.pdf" target="_blank" class="text-blue-600 hover:underline">View Certificate</a>
+                </div>
+                <div class="certification-item bg-white p-6 rounded-lg shadow-md transition transform hover:-translate-y-1" data-category="AI">
+                    <h3 class="text-xl font-semibold mb-2">Build AI Agents and Automate Workflows with n8n</h3>
+                    <p class="text-gray-600 mb-4">2023</p>
+                    <a href="CertificateOfCompletion_Build AI Agents and Automate Workflows with n8n.pdf" target="_blank" class="text-blue-600 hover:underline">View Certificate</a>
+                </div>
+                <div class="certification-item bg-white p-6 rounded-lg shadow-md transition transform hover:-translate-y-1" data-category="AI">
+                    <h3 class="text-xl font-semibold mb-2">AI Pair Programming with GitHub Copilot</h3>
+                    <p class="text-gray-600 mb-4">2023</p>
+                    <a href="CertificateOfCompletion_AI Pair Programming with GitHub Copilot.pdf" target="_blank" class="text-blue-600 hover:underline">View Certificate</a>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const filterButtons = document.querySelectorAll('#certification-filters button');
+                const items = document.querySelectorAll('.certification-item');
+
+                function showCategory(category) {
+                    items.forEach(item => {
+                        if (item.getAttribute('data-category') === category) {
+                            item.style.display = 'block';
+                            item.classList.add('active');
+                        } else {
+                            item.style.display = 'none';
+                            item.classList.remove('active');
+                        }
+                    });
+                    
+                    filterButtons.forEach(btn => {
+                        if (btn.getAttribute('data-category') === category) {
+                            btn.classList.add('bg-blue-600', 'text-white', 'active');
+                            btn.classList.remove('bg-white', 'text-blue-600');
+                        } else {
+                            btn.classList.remove('bg-blue-600', 'text-white', 'active');
+                            btn.classList.add('bg-white', 'text-blue-600');
+                        }
+                    });
                 }
-            }
-        }
-    </script>
+
+                // Default to Devops
+                showCategory('Devops');
+
+                filterButtons.forEach(btn => {
+                    btn.addEventListener('click', function () {
+                        showCategory(btn.getAttribute('data-category'));
+                    });
+                });
+            });
+        </script>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center">Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Programming Languages</h3>
+                    <ul class="space-y-2">
+                        <li class="bg-gray-100 px-4 py-2 rounded">Python</li>
+                        <li class="bg-gray-100 px-4 py-2 rounded">JavaScript</li>
+                        <li class="bg-gray-100 px-4 py-2 rounded">C#</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Scripting Languages</h3>
+                    <ul class="space-y-2">
+                        <li class="bg-gray-100 px-4 py-2 rounded">Terraform</li>
+                        <li class="bg-gray-100 px-4 py-2 rounded">Ansible</li>
+                        <li class="bg-gray-100 px-4 py-2 rounded">Shell Scripting</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">CI/CD Tools</h3>
+                    <ul class="space-y-2">
+                        <li class="bg-gray-100 px-4 py-2 rounded">GitHub Actions</li>
+                        <li class="bg-gray-100 px-4 py-2 rounded">Octopus Deploy</li>
+                        <li class="bg-gray-100 px-4 py-2 rounded">TeamCity</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Monitoring Tools</h3>
+                    <ul class="space-y-2">
+                        <li class="bg-gray-100 px-4 py-2 rounded">New Relic</li>
+                        <li class="bg-gray-100 px-4 py-2 rounded">CloudWatch</li>
+                        <li class="bg-gray-100 px-4 py-2 rounded">ELK</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Cloud</h3>
+                    <ul class="space-y-2">
+                        <li class="bg-gray-100 px-4 py-2 rounded">AWS (EC2, S3, RDS, CloudFormation)</li>
+                        <li class="bg-gray-100 px-4 py-2 rounded">Azure (VMs)</li>
+                        <li class="bg-gray-100 px-4 py-2 rounded">Cloud Foundry</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Mayank Inani. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
