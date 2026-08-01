@@ -3,207 +3,262 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mayank Inani - Portfolio</title>
+    <title>Mayank Inani - DevOps & Cloud Engineer</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-100">
-    <!-- Fixed Header -->
-    <div class="fixed-header">
-        <div class="container mx-auto px-4">
-            <h1 class="text-3xl md:text-4xl font-bold text-white">Mayank Inani</h1>
-            <h2 class="text-xl md:text-2xl text-white opacity-90">Software Engineer II</h2>
-        </div>
-    </div>
-
-    <!-- Hero Section -->
-    <header class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20">
-        <div class="container mx-auto px-4">
-            <div class="hero-content">
-                <div class="profile-container">
-                    <img src="Profile Picture.jpeg" alt="Mayank Inani" class="profile-image">
-                </div>
-                <div class="hero-text">
-                    <div class="prose prose-xl text-gray-100 mb-8">
-                <p>DevOps | Cloud Engineer | AI Enthusiast</p>
-                <p>I'm a Software Engineer at Philips India Ltd, working on DevOps, CI/CD, and cloud infrastructure across mission-critical healthcare platforms. My experience spans building robust deployment pipelines, managing cloud-native applications, and automating infrastructure at scale.</p>
-                <p>From designing end-to-end CI/CD pipelines using GitHub Actions, Jenkins, and Octopus, to migrating platforms from Cloud Foundry to Kubernetes (EKS), I've helped streamline development and operations, reduce downtime, and improve deployment efficiency by over 5x.</p>
-                <p>I work hands-on with tools like AWS, Docker, Kubernetes, CloudWatch, New Relic, and ELK Stack, and I'm passionate about clean automation, scalable infrastructure, and continuous learning. I'm also experienced in scripting, application monitoring, and production troubleshooting across Windows and Linux environments.</p>
-                    </div>
-                    <div class="flex space-x-4">
-                        <a href="mailto:inanimayank7737@gmail.com" class="bg-white text-blue-600 px-6 py-2 rounded-full hover:bg-gray-100 transition">Email: inanimayank7737@gmail.com</a>
-                        <a href="https://www.linkedin.com/in/inanimayank/" target="_blank" class="bg-white text-blue-600 px-6 py-2 rounded-full hover:bg-gray-100 transition">LinkedIn</a>
-                        <a href="Mayank's Resume.pdf" target="_blank" class="bg-white text-blue-600 px-6 py-2 rounded-full hover:bg-gray-100 transition">Resume</a>
-                    </div>
-                </div>
-            </div>
+<body>
+    <header class="site-header">
+        <div class="container mx-auto px-4 header-inner">
+            <a href="#top" class="brand">
+                <span class="brand-name">Mayank Inani</span>
+                <span class="brand-role">DevOps & Cloud Engineer</span>
+            </a>
+            <nav class="nav-links" aria-label="Primary navigation">
+                <a href="#summary">Summary</a>
+                <a href="#skills">Skills</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#certifications">Certifications</a>
+            </nav>
         </div>
     </header>
 
-    <!-- Work Experience Section -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-12 text-center">Work Experience</h2>
-            <div class="space-y-12">
-                <div class="border-l-4 border-blue-600 pl-4">
-                    <h3 class="text-xl font-semibold">Software Engineer</h3>
-                    <h4 class="text-lg text-gray-600">Philips India Ltd</h4>
-                    <p class="text-gray-500 mb-4">July 2023 - Present</p>
-                    <div class="prose max-w-none">
-                        <p><strong>Tech Stack:</strong> AWS (EC2, S3, RDS, CloudFormation), TeamCity, Jenkins, Octopus, Docker, Kubernetes, Python, Git, Github Actions, ELK Stack, CloudWatch, New Relic.</p>
-                        <ul class="list-disc pl-6">
-                            <li><strong>Care Orchestrator:</strong> Designed and implemented an CI/CD pipeline, streamlining deployments using the CORMS (Release Management System).<br>Enhanced troubleshooting and maintenance capabilities across critical services, including Neo4j, DocDB, RabbitMQ, ELK Stack, and Cloud Foundry.<br>Acquired extensive knowledge of Agile methodologies and enterprise-scale product development practices.</li>
-                            <li><strong>Tools Migration:</strong> Facilitated the migration of applications from Cloud Foundry to EKS-based microservices, establishing efficient CI/CD pipelines for enhanced performance.<br>Led the transition from GitLab to GitHub, including migrating TeamCity build processes to GitHub Actions for improved integration and workflow efficiency.</li>
-                            <li><strong>Dream Mapper:</strong> Reduced manual deployment effort by 90% and improved deployment speed by 5x through the creation of automated Octopus Deploy projects.<br>Developed expertise in managing and troubleshooting Windows Server-based applications and instances.</li>
-                            <li><strong>Operations:</strong> Automated alerts for production environments, enhancing monitoring and reducing downtime across Cloud applications and spaces.<br>Gained hands-on experience in maintaining and optimizing production environments, ensuring high availability and reliability.</li>
-                        </ul>
+    <main id="top">
+        <section class="hero-section">
+            <div class="container mx-auto px-4 hero-grid">
+                <div class="profile-card">
+                    <img src="Profile Picture.jpeg" alt="Mayank Inani" class="profile-image">
+                </div>
+                <div class="hero-copy">
+                    <p class="eyebrow">Software Engineer II | Philips India Ltd</p>
+                    <h1>DevOps & Cloud Engineer</h1>
+                    <p class="hero-summary">
+                        I work on production cloud infrastructure, Kubernetes workloads, release automation, observability, and DevSecOps for healthcare platforms, with growing hands-on focus in AI-enabled infrastructure and AIOps.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="mailto:inanimayank7737@gmail.com" class="btn btn-primary">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" class="btn-icon"><path d="M4 6h16v12H4V6Zm8 6.6L5.9 7.5H18.1L12 12.6Zm0 2.4 6.6-5.5V16.5H5.4V9.5L12 15Z"/></svg>
+                            Email
+                        </a>
+                        <a href="https://www.linkedin.com/in/inanimayank/" target="_blank" class="btn btn-secondary">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" class="btn-icon"><path d="M6.94 8.98H3.96V20h2.98V8.98ZM5.45 4a1.73 1.73 0 1 0 0 3.46 1.73 1.73 0 0 0 0-3.46Zm14.59 9.83c0-2.95-1.58-4.32-3.69-4.32-1.7 0-2.46.94-2.89 1.6V8.98h-2.86V20h2.98v-5.45c0-1.44.27-2.83 2.05-2.83 1.75 0 1.78 1.64 1.78 2.92V20h2.98l-.35-6.17Z"/></svg>
+                            LinkedIn
+                        </a>
+                        <a href="Mayank's Resume.pdf" target="_blank" class="btn btn-secondary">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" class="btn-icon"><path d="M12 3v10.2l3.6-3.6L17 11l-5 5-5-5 1.4-1.4 3.6 3.6V3h2ZM5 18h14v2H5v-2Z"/></svg>
+                            Resume
+                        </a>
+                    </div>
+                    <div class="quick-stats" aria-label="Career highlights">
+                        <div>
+                            <strong>3+ years</strong>
+                            <span>DevOps & cloud experience</span>
+                        </div>
+                        <a href="#software-engineer-i">
+                            <strong>100+</strong>
+                            <span>repositories modernized</span>
+                        </a>
+                        <a href="#software-engineer-i">
+                            <strong>90%</strong>
+                            <span>manual deployment effort reduced</span>
+                        </a>
+                        <a href="#software-engineer-i">
+                            <strong>5x</strong>
+                            <span>deployment speed improvement</span>
+                        </a>
                     </div>
                 </div>
-                <div class="border-l-4 border-blue-600 pl-4">
-                    <h3 class="text-xl font-semibold">Software Engineer Intern</h3>
-                    <h4 class="text-lg text-gray-600">Philips India Ltd</h4>
-                    <p class="text-gray-500 mb-4">Jan 2023 - July 2023</p>
-                    <div class="prose max-w-none">
-                        <p><strong>Tech Stack:</strong> C#, .NET, Docker, Kubernetes, GitHub, Azure, Redis, Kafka, PostgreSQL, Prometheus</p>
-                        <ul class="list-disc pl-6">
-                            <li><strong>GitHub Actions:</strong> Developed and deployed custom GitHub Actions to build and deploy code on on-premises machines, streamlining development workflows.<br>Integrated Fortify and BlackDuck scans into GitHub Actions pipelines to ensure robust security and compliance in branch code.</li>
-                            <li><strong>Docker and Kubernetes Application Deploy:</strong> Successfully deployed the complete PIX Platform on local environments and virtual machines using ArgoCD, Helm charts, and Docker images.<br>Gained extensive hands-on experience in creating, managing, and optimizing Docker images, as well as deploying and orchestrating applications with Kubernetes.</li>
-                        </ul>
+            </div>
+        </section>
+
+        <section class="section" id="summary">
+            <div class="container mx-auto px-4 section-narrow">
+                <div class="section-heading">
+                    <p class="eyebrow">Profile</p>
+                    <h2>Professional Summary</h2>
+                </div>
+                <p class="summary-text">
+                    <strong>DevOps & Cloud Engineer</strong> with <strong>3+ years</strong> of hands-on experience designing and operating <strong>production cloud infrastructure</strong>, <strong>CI/CD platforms</strong>, <strong>Kubernetes workloads</strong>, and <strong>deployment automation</strong> on <strong>AWS</strong>. Proven ownership of end-to-end <strong>infrastructure and release operations</strong>, including <strong>AWS EKS migrations</strong>, <strong>RabbitMQ migration</strong> across AWS accounts, <strong>Terraform-based automation</strong>, and <strong>CI/CD modernization</strong> across <strong>100+ repositories</strong>. Strong in <strong>AWS</strong>, <strong>Kubernetes</strong>, <strong>Terraform</strong>, <strong>GitHub Actions</strong>, <strong>Docker</strong>, <strong>Helm</strong>, <strong>ArgoCD</strong>, <strong>observability</strong>, and <strong>DevSecOps</strong>.
+                </p>
+            </div>
+        </section>
+
+        <section class="section alt-section" id="skills">
+            <div class="container mx-auto px-4">
+                <div class="section-heading centered">
+                    <p class="eyebrow">Toolbox</p>
+                    <h2>Technical Skills</h2>
+                </div>
+                <div class="skills-matrix">
+                    <div class="skill-group">
+                        <h3>Cloud</h3>
+                        <p>AWS EC2, S3, RDS, IAM, CloudWatch, CloudFormation, EKS, Azure VMs, Cloud Foundry</p>
+                    </div>
+                    <div class="skill-group">
+                        <h3>Infrastructure as Code</h3>
+                        <p>Terraform, Terraform Modules, Infrastructure Provisioning, Environment Migration, Ansible</p>
+                    </div>
+                    <div class="skill-group">
+                        <h3>Kubernetes</h3>
+                        <p>Amazon EKS, Kubernetes, Helm Charts, ArgoCD, Microservices Deployment</p>
+                    </div>
+                    <div class="skill-group">
+                        <h3>CI/CD</h3>
+                        <p>GitHub Actions, Jenkins, Octopus Deploy, TeamCity, Release Management, Deployment Automation</p>
+                    </div>
+                    <div class="skill-group">
+                        <h3>Monitoring</h3>
+                        <p>New Relic, AWS CloudWatch, ELK Stack, Prometheus</p>
+                    </div>
+                    <div class="skill-group">
+                        <h3>Data & Messaging</h3>
+                        <p>Neo4j, Amazon DocumentDB, PostgreSQL, Redis, RabbitMQ, Apache Kafka</p>
+                    </div>
+                    <div class="skill-group">
+                        <h3>Scripting</h3>
+                        <p>Shell Scripting, Python, C#, JavaScript</p>
+                    </div>
+                    <div class="skill-group">
+                        <h3>Security & Source Control</h3>
+                        <p>Fortify SAST, BlackDuck SCA, DevSecOps pipeline integration, Git, GitHub, GitLab</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Certifications Section -->
-    <section class="py-16 bg-gray-50" id="certifications-section">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-8 text-center">Certifications</h2>
-            <div class="flex justify-center space-x-4 mb-8" id="certification-filters">
-                <button data-category="Devops"
-                        class="px-4 py-2 rounded-full border border-blue-600 bg-blue-600 text-white hover:bg-blue-600 hover:text-white transition active">
-                    Devops
-                </button>
-                <button data-category="AI"
-                        class="px-4 py-2 rounded-full border border-blue-600 bg-white text-blue-600 hover:bg-blue-600 hover:text-white transition">
-                    AI
-                </button>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="certifications-grid">
-                <div class="certification-item bg-white p-6 rounded-lg shadow-md transition transform hover:-translate-y-1" data-category="Devops">
-                    <h3 class="text-xl font-semibold mb-2">AWS Essential Training</h3>
-                    <p class="text-gray-600 mb-4">2023</p>
-                    <a href="Certificates/CertificateOfCompletion_AWS Essential Training for Developers.pdf" target="_blank" class="text-blue-600 hover:underline">View Certificate</a>
+        <section class="section" id="experience">
+            <div class="container mx-auto px-4">
+                <div class="section-heading centered">
+                    <p class="eyebrow">Career</p>
+                    <h2>Work Experience</h2>
                 </div>
-                <div class="certification-item bg-white p-6 rounded-lg shadow-md transition transform hover:-translate-y-1" data-category="Devops">
-                    <h3 class="text-xl font-semibold mb-2">DevOps Foundations</h3>
-                    <p class="text-gray-600 mb-4">2023</p>
-                    <a href="Certificates/CertificateOfCompletion_DevOps Foundations 2016.pdf" target="_blank" class="text-blue-600 hover:underline">View Certificate</a>
-                </div>
-                <div class="certification-item bg-white p-6 rounded-lg shadow-md transition transform hover:-translate-y-1" data-category="AI">
-                    <h3 class="text-xl font-semibold mb-2">Build AI Agents and Automate Workflows with n8n</h3>
-                    <p class="text-gray-600 mb-4">2023</p>
-                    <a href="Certificates/CertificateOfCompletion_Build AI Agents and Automate Workflows with n8n.pdf" target="_blank" class="text-blue-600 hover:underline">View Certificate</a>
-                </div>
-                <div class="certification-item bg-white p-6 rounded-lg shadow-md transition transform hover:-translate-y-1" data-category="AI">
-                    <h3 class="text-xl font-semibold mb-2">AI Pair Programming with GitHub Copilot</h3>
-                    <p class="text-gray-600 mb-4">2023</p>
-                    <a href="Certificates/CertificateOfCompletion_AI Pair Programming with GitHub Copilot.pdf" target="_blank" class="text-blue-600 hover:underline">View Certificate</a>
-                </div>
-            </div>
-        </div>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const filterButtons = document.querySelectorAll('#certification-filters button');
-                const items = document.querySelectorAll('.certification-item');
+                <div class="timeline">
+                    <article class="timeline-item" id="software-engineer-i">
+                        <div class="timeline-head">
+                            <div>
+                                <h3>Software Engineer II - DevOps & Cloud</h3>
+                                <p>Philips India Ltd · Bengaluru, India</p>
+                            </div>
+                            <span>September 2025 - Present</span>
+                        </div>
+                        <ul>
+                            <li>Owned end-to-end <strong>RabbitMQ stack migration</strong> across AWS accounts using <strong>Terraform</strong> and orchestration workflows, delivering <strong>zero customer downtime</strong> while reducing manual intervention by <strong>80%</strong>.</li>
+                            <li>Took initiative and delivered <strong>Terraform-based patching workflows</strong> for service stacks, enabling controlled updates to instance types, AMIs, user data, and disaster recovery configurations.</li>
+                            <li>Leading <strong>production release ownership</strong> for multiple products, coordinating planning, documentation, approvals, validation, and post-release checks.</li>
+                            <li>Built hands-on expertise in <strong>Amazon EKS</strong> by deploying microservices with <strong>Helm Charts</strong> and managing GitOps delivery through <strong>ArgoCD</strong>.</li>
+                            <li>Contributed to <strong>Cloud Foundry to AWS EKS</strong> migration, supporting platform modernisation, container adoption, and Kubernetes deployment.</li>
+                        </ul>
+                    </article>
 
-                function showCategory(category) {
-                    items.forEach(item => {
-                        if (item.getAttribute('data-category') === category) {
-                            item.style.display = 'block';
-                            item.classList.add('active');
-                        } else {
-                            item.style.display = 'none';
-                            item.classList.remove('active');
-                        }
-                    });
-                    
-                    filterButtons.forEach(btn => {
-                        if (btn.getAttribute('data-category') === category) {
-                            btn.classList.add('bg-blue-600', 'text-white', 'active');
-                            btn.classList.remove('bg-white', 'text-blue-600');
-                        } else {
-                            btn.classList.remove('bg-blue-600', 'text-white', 'active');
-                            btn.classList.add('bg-white', 'text-blue-600');
-                        }
-                    });
-                }
+                    <article class="timeline-item">
+                        <div class="timeline-head">
+                            <div>
+                                <h3>Software Engineer I - DevOps & Cloud</h3>
+                                <p>Philips India Ltd · Bengaluru, India</p>
+                            </div>
+                            <span>Jul 2023 - September 2025</span>
+                        </div>
+                        <ul>
+                            <li>Architected <strong>CI/CD pipelines</strong> for <em>Dream Mapper</em> using CORMS Release Management, reducing release cycle time, supporting zero-downtime deployments, and enabling faster developer releases.</li>
+                            <li>Led the <strong>Octopus Deploy</strong> automation initiative for <em>Dream Mapper</em>, creating standardized deployment workflows that reduced manual deployment effort by <strong>90%</strong>, improved deployment speed by <strong>5x</strong>, and strengthened release consistency.</li>
+                            <li>Migrated source control from <strong>GitLab to GitHub</strong> and moved <strong>TeamCity builds to GitHub Actions</strong>, standardising CI across <strong>100+ repositories</strong>.</li>
+                            <li>Supported <strong>production on-call operations</strong> and automated recurring alerts in New Relic and CloudWatch, reducing alert volume and noise by <strong>20%</strong>.</li>
+                            <li>Maintained <strong>Neo4j, DocumentDB, RabbitMQ, and ELK Stack</strong> services for mission-critical healthcare platforms.</li>
+                        </ul>
+                    </article>
 
-                // Default to Devops
-                showCategory('Devops');
-
-                filterButtons.forEach(btn => {
-                    btn.addEventListener('click', function () {
-                        showCategory(btn.getAttribute('data-category'));
-                    });
-                });
-            });
-        </script>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-12 text-center">Skills</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">Programming Languages</h3>
-                    <ul class="space-y-2">
-                        <li class="bg-gray-100 px-4 py-2 rounded">Python</li>
-                        <li class="bg-gray-100 px-4 py-2 rounded">JavaScript</li>
-                        <li class="bg-gray-100 px-4 py-2 rounded">C#</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">Scripting Languages</h3>
-                    <ul class="space-y-2">
-                        <li class="bg-gray-100 px-4 py-2 rounded">Terraform</li>
-                        <li class="bg-gray-100 px-4 py-2 rounded">Ansible</li>
-                        <li class="bg-gray-100 px-4 py-2 rounded">Shell Scripting</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">CI/CD Tools</h3>
-                    <ul class="space-y-2">
-                        <li class="bg-gray-100 px-4 py-2 rounded">GitHub Actions</li>
-                        <li class="bg-gray-100 px-4 py-2 rounded">Octopus Deploy</li>
-                        <li class="bg-gray-100 px-4 py-2 rounded">TeamCity</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">Monitoring Tools</h3>
-                    <ul class="space-y-2">
-                        <li class="bg-gray-100 px-4 py-2 rounded">New Relic</li>
-                        <li class="bg-gray-100 px-4 py-2 rounded">CloudWatch</li>
-                        <li class="bg-gray-100 px-4 py-2 rounded">ELK</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">Cloud</h3>
-                    <ul class="space-y-2">
-                        <li class="bg-gray-100 px-4 py-2 rounded">AWS (EC2, S3, RDS, CloudFormation)</li>
-                        <li class="bg-gray-100 px-4 py-2 rounded">Azure (VMs)</li>
-                        <li class="bg-gray-100 px-4 py-2 rounded">Cloud Foundry</li>
-                    </ul>
+                    <article class="timeline-item">
+                        <div class="timeline-head">
+                            <div>
+                                <h3>Software Engineer Intern - DevOps</h3>
+                                <p>Philips India Ltd · Bengaluru, India</p>
+                            </div>
+                            <span>Jan 2023 - Jul 2023</span>
+                        </div>
+                        <ul>
+                            <li>Built and published <strong>custom GitHub Actions</strong> to automate build and deployment to on-premises servers.</li>
+                            <li>Integrated <strong>Fortify SAST</strong> and <strong>BlackDuck SCA</strong> scans into GitHub Actions pipelines, enforcing DevSecOps standards on every pull request.</li>
+                            <li>Deployed the full <strong>PIX Platform</strong> on local and VM environments using <strong>ArgoCD</strong>, <strong>Helm Charts</strong>, and Docker images.</li>
+                        </ul>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto px-4 text-center">
-            <p>&copy; 2025 Mayank Inani. All rights reserved.</p>
+        <section class="section alt-section" id="projects">
+            <div class="container mx-auto px-4">
+                <div class="section-heading centered">
+                    <p class="eyebrow">Hands-on Build</p>
+                    <h2>Projects</h2>
+                </div>
+                <article class="project-panel">
+                    <div class="project-panel-head">
+                        <div>
+                            <h3>AI-Powered Slack Q&A Agent (n8n)</h3>
+                            <p>Tech Stack: n8n, Slack API, LLM/Agent Workflows, Excel Integration</p>
+                        </div>
+                        <span>2024</span>
+                    </div>
+                    <ul>
+                        <li>Built a personal <strong>n8n workflow</strong> that ingests Excel spreadsheet data and answers <strong>natural-language questions</strong> via Slack, using a looped <strong>AI agent</strong> for iterative query parsing and response generation.</li>
+                        <li>Could improve document workflows and information retrieval efficiency by <strong>40-50%</strong>.</li>
+                        <li>Applied <strong>agent orchestration</strong> and <strong>workflow automation</strong> concepts learned through certification to a self-initiated, hands-on use case.</li>
+                        <li>Strengthened practical understanding of <strong>AI-agent design</strong> and automation patterns for <strong>AIOps</strong> and AI-driven infrastructure.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="education">
+            <div class="container mx-auto px-4 two-column-section">
+                <div>
+                    <div class="section-heading">
+                        <p class="eyebrow">Academic Background</p>
+                        <h2>Education</h2>
+                    </div>
+                    <div class="info-panel">
+                        <h3>Bachelor of Engineering - Computer Science & Engineering</h3>
+                        <p>Chandigarh University · 8.14 CGPA</p>
+                        <span>2019 - 2023 · Mohali, Punjab, India</span>
+                    </div>
+                </div>
+                <div id="certifications">
+                    <div class="section-heading">
+                        <p class="eyebrow">Learning</p>
+                        <h2>Certifications</h2>
+                    </div>
+                    <div class="cert-list">
+                        <a href="Certificates/CertificateOfCompletion_AWS Essential Training for Developers.pdf" target="_blank" class="cert-item">
+                            <strong>AWS Essential Training for Developers</strong>
+                            <span>LinkedIn Learning · 2024</span>
+                        </a>
+                        <a href="Certificates/CertificateOfCompletion_DevOps Foundations 2016.pdf" target="_blank" class="cert-item">
+                            <strong>DevOps Foundations</strong>
+                            <span>LinkedIn Learning · 2023</span>
+                        </a>
+                        <a href="Certificates/CertificateOfCompletion_Build AI Agents and Automate Workflows with n8n.pdf" target="_blank" class="cert-item">
+                            <strong>Build AI Agents & Automate Workflows with n8n</strong>
+                            <span>LinkedIn Learning · 2024</span>
+                        </a>
+                        <a href="Certificates/CertificateOfCompletion_AI Pair Programming with GitHub Copilot.pdf" target="_blank" class="cert-item">
+                            <strong>AI Pair Programming with GitHub Copilot</strong>
+                            <span>LinkedIn Learning · 2025</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container mx-auto px-4 footer-inner">
+            <p>Mayank Inani · DevOps & Cloud Engineer</p>
+            <div>
+                <a href="mailto:inanimayank7737@gmail.com">Email</a>
+                <a href="https://www.linkedin.com/in/inanimayank/" target="_blank">LinkedIn</a>
+                <a href="#top">Back to top</a>
+            </div>
         </div>
     </footer>
 
